@@ -15,12 +15,12 @@
 
   <link rel="shortcut icon" href="blockly4Arduino/favicon3.png"/>
   <!-- Blockly4Arduino - These three files contain the compress version -->
-  <script src="blockly_compressed.js"></script>
+  <!--script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
-  <script src="arduino_compressed.js"></script>
+  <script src="arduino_compressed.js"></script-->
   <!-- To use the uncompressed version comment out the above and comment in the ones below -->
-  <!--script src="blockly_uncompressed.js"></script>
-  <script src="../closure-library/closure/goog/base.js"></script>
+  <script src="blockly_compressed.js"></script>
+  <!--script src="closure/goog/base.js"></script-->
   <script src="blocks/logic.js"></script>
   <script src="blocks/loops.js"></script>
   <script src="blocks/math.js"></script>
@@ -96,7 +96,7 @@
   <script src="generators/arduino/md_actuator.js"></script>
   <script src="generators/arduino/md_audio.js"></script>
   <script src="generators/arduino/md_light.js"></script>
-  <script src="generators/arduino/ledup_blocks.js"></script-->
+  <script src="generators/arduino/ledup_blocks.js"></script>
   
   <!-- Default language js files, user selection appended to head on load -->
   <script type="text/javascript" src="msg/js/en.js"></script>
@@ -152,8 +152,9 @@
                     <li><input id="ex_MD02" type="button" class="buttonlink" value="02: Rotate Servo" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_RotateServo.xml');" /></li>
                     <li><input id="ex_MD03" type="button" class="buttonlink" value="03: LED with Button" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_ButtonLed.xml');" /></li>
                     <li><input id="ex_MD04" type="button" class="buttonlink" value="04: Sound with Button" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_ButtonSound.xml');" /></li-->
-                    <li class="dropdown-header">Diorama</li>
+                    <li class="dropdown-header">DCS Kits</li>
                     <li><input id="ex_DIO01" type="button" class="buttonlink" value="01: Diorama example" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Diorama_01_2tracks_effect.xml');" /></li>
+                    <li><input id="ex_DCS02" type="button" class="buttonlink" value="02: Zandloper" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Zandloper code.xml');" /></li>
                     <li class="dropdown-header">AllBot</li>
                     <li><input id="ex_allbot01" type="button" class="buttonlink" value="01: Calibrate VR408" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_calibrateServos_VR408_nl.xml');" /></li>
                     <li><input id="ex_allbot02" type="button" class="buttonlink" value="02: Allbot VR408 Walk and Wave" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_VR408_WalkWave.xml');" /></li>

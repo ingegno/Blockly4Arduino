@@ -183,7 +183,7 @@ Blockly.Flyout.prototype.init = function(targetWorkspace) {
   }
   // Dragging the flyout up and down.
   Array.prototype.push.apply(this.eventWrappers_,
-      Blockly.bindEvent_(this.svgGroup_, 'mousedown', this, this.onMouseDown_));
+      Blockly.bindEvent_(this.svgGroup_, 'pointerdown', this, this.onMouseDown_));
 };
 
 /**
@@ -669,14 +669,14 @@ Blockly.Flyout.prototype.clearOldBlocks_ = function() {
  */
 Blockly.Flyout.prototype.addBlockListeners_ = function(root, block, rect) {
   if (this.autoClose) {
-    this.listeners_.push(Blockly.bindEvent_(root, 'mousedown', null,
+    this.listeners_.push(Blockly.bindEvent_(root, 'pointerdown', null,
         this.createBlockFunc_(block)));
-    this.listeners_.push(Blockly.bindEvent_(rect, 'mousedown', null,
+    this.listeners_.push(Blockly.bindEvent_(rect, 'pointerdown', null,
         this.createBlockFunc_(block)));
   } else {
-    this.listeners_.push(Blockly.bindEvent_(root, 'mousedown', null,
+    this.listeners_.push(Blockly.bindEvent_(root, 'pointerdown', null,
         this.blockMouseDown_(block)));
-    this.listeners_.push(Blockly.bindEvent_(rect, 'mousedown', null,
+    this.listeners_.push(Blockly.bindEvent_(rect, 'pointerdown', null,
         this.blockMouseDown_(block)));
   }
   this.listeners_.push(Blockly.bindEvent_(root, 'mouseover', block,
@@ -711,7 +711,7 @@ Blockly.Flyout.prototype.blockMouseDown_ = function(block) {
       Blockly.Flyout.startBlock_ = block;
       Blockly.Flyout.startFlyout_ = flyout;
       Blockly.Flyout.onMouseUpWrapper_ = Blockly.bindEvent_(document,
-          'mouseup', this, flyout.onMouseUp_);
+          'pointerup', this, flyout.onMouseUp_);
       Blockly.Flyout.onMouseMoveBlockWrapper_ = Blockly.bindEvent_(document,
           'mousemove', this, flyout.onMouseMoveBlock_);
     }
