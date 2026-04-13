@@ -306,22 +306,23 @@ function resetClick() {
 * Function checkExtension will poll if the extension is installed or not
 */
 var extensionActive = false;
-function checkExtension() {			
+function checkExtension() {
+  extensionActive = false;
     var lblStatus = document.getElementById('lblStatus');
-    if (typeof chrome !== 'undefined') {
-      chrome.runtime.sendMessage(extensionid, 'check', response => {
-          if(!response) {
-              console.log("No response received. " + response);
-              lblStatus.innerHTML +=  Blockly.Msg.B4A_NO_EXTENSION + '\n';
-              extensionActive = false;
-          } else {
-              lblStatus.innerHTML = JSON.stringify(response); 
-              extensionActive = true;
-          }
-      });
-    } else {
+//    if (typeof chrome !== 'undefined') {
+//      chrome.runtime.sendMessage(extensionid, 'check', response => {
+//          if(!response) {
+//              console.log("No response received. " + response);
+//              lblStatus.innerHTML +=  Blockly.Msg.B4A_NO_EXTENSION + '\n';
+//              extensionActive = false;
+//          } else {
+//              lblStatus.innerHTML = JSON.stringify(response); 
+//              extensionActive = true;
+//          }
+//      });
+//    } else {
       lblStatus.innerHTML += Blockly.Msg.B4A_NO_CHROME + '\n';
-    }
+//    }
 }
 
 /**
@@ -331,23 +332,23 @@ function populatePorts() {
     var lblStatus = document.getElementById('lblStatus');
     var portType = document.getElementById('portType');
     if (typeof chrome !== 'undefined') {
-      chrome.runtime.sendMessage(extensionid, 'ports', response => {
-          if(!response) {
+//      chrome.runtime.sendMessage(extensionid, 'ports', response => {
+//          if(!response) {
               lblStatus.innerHTML += Blockly.Msg.B4A_NO_EXTENSION + '\n';
-          } else {
-              // empty select
-              portType.options.length = 0;
-              // populate list with response
-              var data = response['message'];
-              let option;
-              for (let i = 0; i < data.length; i++) {
-                  option = document.createElement('option');
-                  option.text = data[i].comName;
-                  option.value = data[i].comName;
-                  portType.add(option);
-              }
-          }
-      });
+//          } else {
+//              // empty select
+//              portType.options.length = 0;
+//              // populate list with response
+//              var data = response['message'];
+//              let option;
+//              for (let i = 0; i < data.length; i++) {
+//                  option = document.createElement('option');
+//                  option.text = data[i].comName;
+//                  option.value = data[i].comName;
+//                  portType.add(option);
+//              }
+//          }
+//      });
     }
 }
 
@@ -515,16 +516,16 @@ var compilerPort = localStorage['compilerPort'] || '7000';
 var extensionid = localStorage['extensionid'] || 'limahhklinobffpljkonpenchljefiag';
 // open long lived connection with extension (it takes time for flash to complete)
 var port;
-if (typeof chrome !== 'undefined') {
-  port = chrome.runtime.connect(extensionid);
-  console.log('Connected to ext ', extensionid, ' as Port ', port )
-}
+//if (typeof chrome !== 'undefined') {
+//  port = chrome.runtime.connect(extensionid);
+//  console.log('Connected to ext ', extensionid, ' as Port ', port )
+//}
 // log out any responses we get from the chrome app
 if (port) {
-    port.onMessage.addListener(function(msg) {
-      console.log('Message from extension:', msg);
-      lblStatus.innerHTML += Blockly.Msg.B4A_MSG_EXTENSION + JSON.stringify(msg) + '\n';
-    });
+//   port.onMessage.addListener(function(msg) {
+//      console.log('Message from extension:', msg);
+//      lblStatus.innerHTML += Blockly.Msg.B4A_MSG_EXTENSION + JSON.stringify(msg) + '\n';
+//    });
 } else {
     console.log('No connection available to extension !')
 }
