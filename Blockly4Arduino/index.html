@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Blockly4Arduino: Blockly for Arduino and Genuino</title>
+  <title>Blockly4Arduino: Blockly for Arduino</title>
   
   <!-- Materialize, Prettify, and Ardublockly CSS -->
   <link rel="stylesheet" href="blockly4Arduino/materialize/materialize.css" media="screen,projection"/>
@@ -61,6 +61,7 @@
   <script src="blocks/arduino/md_audio.js"></script>
   <script src="blocks/arduino/md_light.js"></script>
   <script src="blocks/arduino/ledup_blocks.js"></script>
+  <script src="blocks/arduino/ledupv3_blocks.js"></script>
   <script src="generators/arduino.js"></script>
   <script src="generators/arduino/allbot.js"></script>
   <script src="generators/arduino/array.js"></script>
@@ -98,6 +99,7 @@
   <script src="generators/arduino/md_audio.js"></script>
   <script src="generators/arduino/md_light.js"></script>
   <script src="generators/arduino/ledup_blocks.js"></script>
+  <script src="generators/arduino/ledupv3_blocks.js"></script>
 
   <!-- Default language js files, user selection appended to head on load -->
   <script type="text/javascript" src="msg/js/nl.js"></script>
@@ -906,6 +908,44 @@
     </category>
     <category id="catLedUp" name="LedUpKidz">
       <category id="catLedUpBlocks" name="LedUp Blokken">
+        <block type="ledupv3_hub">
+          <value name="LED-0">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED0</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-1">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED1</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-2">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED2</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-3">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED3</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-4">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED4</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-5">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED5</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+        </block>
         <block type="ledup_hub">
           <value name="LED-0">
             <block type="led_config_hub">
