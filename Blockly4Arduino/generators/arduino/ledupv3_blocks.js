@@ -39,26 +39,10 @@ Blockly.Arduino['ledupv3_hub'] = function(block) {
   
   var code = '';
   var nr;
-  
-  var target = block.getFieldValue('TARGET');
-  
+    
   var blockinputs = [["LED-0", ['8']], ["LED-1", ['9']], ["LED-2", ['10']], ["LED-3", ['0']],
-                     ["LED-4", ['1']], ["LED-5", ['2']] ];
-  code += '// LedUpv3 block wiring of the LED0 to 5\n' +
-            '/*' +
-            'int LED0 = 8;// RESET\n' +
-            'boolean LED0_ON = LOW;\n' +
-            'int LED1 = 9;// SCK\n' +
-            'boolean LED1_ON = LOW;\n' +
-            'int LED2 = 10;// MISO\n' +
-            'boolean LED2_ON = LOW;\n' +
-            'int LED3 = 0;// MOSI\n' +
-            'boolean LED3_ON = LOW;\n' +
-            'int LED4 = 1;// PB4\n' +
-            'boolean LED4_ON = LOW;\n' +
-            'int LED5 = 2;// PB3\n' +
-            'boolean LED5_ON = LOW;\n' +
-            '*/\n';
+                     ["LED-4", ['1']], ["LED-5", ['2']], ["LEDUP_BTN", ['3']]];
+  code += '// LedUpv3 block wiring of the LED0 to 5';
 
   for (nr in blockinputs) {
     parseInput(block, blockinputs[nr][0], blockinputs[nr][1]);

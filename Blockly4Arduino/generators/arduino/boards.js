@@ -343,6 +343,35 @@ Blockly.Arduino.Boards.profiles.attiny85_noreset = {
   interrupt: [['interrupt0', '2'], ['interrupt1', '3']]
 };
 
+/** ATtiny85 board profile. */
+Blockly.Arduino.Boards.profiles.attiny414 = {
+  name: 'ATtiny414',
+  description: 'ATtiny414, chip 14 pins, 20 MHz',
+  compilerFlag: 'arduino:avr:uno',
+  analogPins: Blockly.Arduino.Boards.generateAnalogIo(0, 3).concat(Blockly.Arduino.Boards.generateAnalogIo(6, 10)),
+  digitalPins: Blockly.Arduino.Boards.generateDigitalIo(4, 5).concat(Blockly.Arduino.Boards.generateAnalogIo(0, 3)).concat(Blockly.Arduino.Boards.generateAnalogIo(6, 10)),
+  pwmPins: [['0', '0'], ['1', '1'], ['5', '5'], ['6', '6'], ['7', '7', ['10', '10']]],
+  serial: [['serial', 'Serial']],
+  serialPins: { Serial: [['RX', '-1'], ['TX', '3']] }, //only transmit
+  serialSpeed: [['300', '300'], ['600', '600'], ['1200', '1200'],
+                ['2400', '2400'], ['4800', '4800'], ['9600', '9600'],
+               ],
+  spi: [['SPI', 'SPI']],
+  spiPins: { SPI: [['MOSI', '8'], ['MISO', '9'], ['SCK', '10']] },
+  spiClockDivide: [['2 (10MHz)', 'SPI_CLOCK_DIV2'],
+                   ['4 (5MHz)', 'SPI_CLOCK_DIV4'],
+                   ['8 (2.5MHz)', 'SPI_CLOCK_DIV8'],
+                   ['16 (1MHz)', 'SPI_CLOCK_DIV16'],
+                   ['32 (500KHz)', 'SPI_CLOCK_DIV32'],
+                   ['64 (250KHz)', 'SPI_CLOCK_DIV64'],
+                   ['128 (125KHz)', 'SPI_CLOCK_DIV128']],
+  i2c: [['I2C', 'Wire']],
+  i2cPins: { Wire: [['SDA', '6'], ['SCL', '7']] },
+  i2cSpeed: [['100kHz', '100000L'], ['400kHz', '400000L']],
+  builtinLed: [],
+  interrupt: [['interrupt0', '2'], ['interrupt1', '5'], ['interrupt2', '9']]
+};
+
 /** ESP8266 for the Adafruit Huzzah. */
 Blockly.Arduino.Boards.profiles.esp8266_huzzah = {
   name: 'Adafruit Feather HUZZAH',

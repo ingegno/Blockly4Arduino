@@ -38,6 +38,7 @@ Blockly.Blocks['core_hub_component'] = {
                  ['NodeMCU', 'nodemcu'],
                  ['ATtiny85', 'attiny85'],
                  ['ATtiny85 No Reset', 'attiny85_noreset'],
+                 ['ATtiny414', 'attiny414'],
                  ['AllBot VR204 Uno', 'allbotVR204uno'],
                  ['AllBot VR204 Mega', 'allbotVR204mega'],
                  ['AllBot VR408 Uno', 'allbotVR408uno'],

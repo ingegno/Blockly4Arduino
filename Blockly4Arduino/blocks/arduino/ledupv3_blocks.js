@@ -44,6 +44,13 @@ Blockly.Blocks['ledupv3_hub'] = {
         .setCheck(["HUB_DIG", "HUB_DIGOUT"])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.ARD_LEDUP_LED5); 
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ARD_LEDUPV3_HUBBTN);
+    this.appendValueInput("LEDUP_BTN")
+        .setCheck(["HUB_DIG"])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.ARD_LEDUP_BTN); 
+    this.setInputsInline(false);
     this.setPreviousStatement(false, "MD_BLOCK");
     this.setNextStatement(false, "MD_BLOCK");
     this.setColour('#70D65C');
