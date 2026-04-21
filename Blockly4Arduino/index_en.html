@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="blockly4Arduino/materialize/materialize.css" media="screen,projection"/>
   <link rel="stylesheet" href="blockly4Arduino/prettify/arduino.css"/>
   <link rel="stylesheet" type="text/css" href="blockly4Arduino/color.css" media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="blockly4Arduino/pngflyout.css" media="screen,projection"/>
 
   <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
   <script src="libs/jquery/jquery-1.12.2.min.js"></script>
@@ -110,15 +111,15 @@
   <script type="text/javascript" src="blockly4Arduino/blockly_helper.js"></script>
 
 </head>
-<body onload='checkExtension(), populatePorts()'>
+<body onload=''>
   <table height="100%" width="100%">
     <tr>
       <td>
-                    <div class="header" style="width:100%;background-color:#f9f9f9;">
-                        <!--Start Logo-->
-                        <div class="logo"> <a href="http://ingegno.be"><img src="media/logotop.png" alt="Ingegno" width="800px" /></a></div>
-                        <!--End Logo-->
-                    </div>
+          <div class="header" style="width:100%;background-color:#f9f9f9;">
+              <!--Start Logo-->
+              <div class="logo"> <a href="http://ingegno.be"><img src="media/logotop.png" alt="Ingegno" width="800px" /></a></div>
+              <!--End Logo-->
+          </div>
       </td>
     </tr>
     <tr>
@@ -374,7 +375,9 @@
     <block type="digitalinput_read"></block>
     <block type="button_setup"></block>
     <block type="button_input_pullup_setup"></block>
-    <block type="button_input"></block>
+    <block type="button_input">
+      <field name="WAIT_INPUT">FALSE</field>
+    </block>
     <block type="button_read"></block>
     <block type="digitaloutput_config_hub"></block>
     <block type="digitaloutput_write"></block>
@@ -846,7 +849,9 @@
       <category id="catMDControl" name="Buttons">
         <block type="mcookie_crashbutton_setup"></block>
         <block type="mcookie_button_digitalread"></block>
-        <block type="button_input"></block>
+        <block type="button_input">
+          <field name="WAIT_INPUT">FALSE</field>
+        </block>
       </category>
       <category id="catMDLight" name="Light">
         <block type="mcookie_neopixel_setup"></block>

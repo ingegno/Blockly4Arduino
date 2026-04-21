@@ -306,51 +306,11 @@ function resetClick() {
 * Function checkExtension will poll if the extension is installed or not
 */
 var extensionActive = false;
-function checkExtension() {
-  extensionActive = false;
-    var lblStatus = document.getElementById('lblStatus');
-//    if (typeof chrome !== 'undefined') {
-//      chrome.runtime.sendMessage(extensionid, 'check', response => {
-//          if(!response) {
-//              console.log("No response received. " + response);
-//              lblStatus.innerHTML +=  Blockly.Msg.B4A_NO_EXTENSION + '\n';
-//              extensionActive = false;
-//          } else {
-//              lblStatus.innerHTML = JSON.stringify(response); 
-//              extensionActive = true;
-//          }
-//      });
-//    } else {
-      lblStatus.innerHTML += Blockly.Msg.B4A_NO_CHROME + '\n';
-//    }
-}
 
 /**
 * Function populatePorts will add connected devices to the select box
 */
-function populatePorts() {			
-    var lblStatus = document.getElementById('lblStatus');
-    var portType = document.getElementById('portType');
-    if (typeof chrome !== 'undefined') {
-//      chrome.runtime.sendMessage(extensionid, 'ports', response => {
-//          if(!response) {
-              lblStatus.innerHTML += Blockly.Msg.B4A_NO_EXTENSION + '\n';
-//          } else {
-//              // empty select
-//              portType.options.length = 0;
-//              // populate list with response
-//              var data = response['message'];
-//              let option;
-//              for (let i = 0; i < data.length; i++) {
-//                  option = document.createElement('option');
-//                  option.text = data[i].comName;
-//                  option.value = data[i].comName;
-//                  portType.add(option);
-//              }
-//          }
-//      });
-    }
-}
+
 
 /**
 * Function getCode() will return the generated Arduino Code
