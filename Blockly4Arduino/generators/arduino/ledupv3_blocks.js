@@ -42,7 +42,10 @@ Blockly.Arduino['ledupv3_hub'] = function(block) {
     
   var blockinputs = [["LED-0", ['8']], ["LED-1", ['9']], ["LED-2", ['10']], ["LED-3", ['0']],
                      ["LED-4", ['1']], ["LED-5", ['2']], ["LEDUP_BTN", ['3']], ["LEDUP_PIN", ['7']]];
-  code += '// LedUpv3 block wiring of the LED0 to 5';
+  code += '// This is code for LedUpKidz V3 with 6 LED and a Button\n' +
+    '// You need Arduino IDE and board definitions megaTinyCore 2.6.11+ \n' +
+    '// Select chipset ATtiny414, and use the Programmer to upload code'
+  ;
 
   for (nr in blockinputs) {
     parseInput(block, blockinputs[nr][0], blockinputs[nr][1]);

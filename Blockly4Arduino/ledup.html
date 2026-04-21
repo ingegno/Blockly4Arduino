@@ -141,6 +141,12 @@
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li class="dropdown-header">Basis Voorbeelden</li>
+                    <li><input id="ex_LUK01" type="button" class="buttonlink" value="01: Flikkeren" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidzV3_01_aan_uit.xml');" /></li>
+                    <li><input id="ex_LUK02" type="button" class="buttonlink" value="02: Ronddraaien" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidzV3_02_ronddraaien.xml');" /></li>
+                    <li><input id="ex_LUK03" type="button" class="buttonlink" value="03: Sneller en sneller" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidzV3_03_versnellen.xml');" /></li>
+                    <li class="dropdown-header">Knop Voorbeelden</li>
+                    <li><input id="ex_LUK03" type="button" class="buttonlink" value="04: Wijzig effect met knop" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidzV3_04_statemachine.xml');" /></li>
+                    <li class="dropdown-header">Extra PB0 Gebruik</li>
                     <li class="dropdown-header">LedUpKidz V1</li>
                     <li><input id="ex_LUK01" type="button" class="buttonlink" value="01: Flikkeren" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_01_aan_uit.xml');" /></li>
                     <li><input id="ex_LUK02" type="button" class="buttonlink" value="02: Ronddraaien" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_02_ronddraaien.xml');" /></li>
@@ -282,44 +288,6 @@
             </block>
           </value>
         </block>
-        <block type="ledup_hub">
-          <value name="LED-0">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED0</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-1">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED1</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-2">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED2</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-3">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED3</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-4">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED4</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-5">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED5</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-        </block>
         <block type="procedures_defnoreturn">
           <field name="NAME">EffectAan</field>
           <statement name="STACK">
@@ -408,6 +376,44 @@
     <block type="digitaloutput_config_hub"></block>
     <block type="pwmoutput_config_hub"></block>
     <block type="buzzer_config_hub"></block>
+        <block type="ledup_hub">
+          <value name="LED-0">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED0</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-1">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED1</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-2">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED2</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-3">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED3</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-4">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED4</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+          <value name="LED-5">
+            <block type="led_config_hub">
+              <field name="LEDNAME">LED5</field>
+              <field name="POLARITY">neg</field>  
+            </block>
+          </value>
+        </block>
   </category>
   <category id="catInputOutput" name="In/Output">
     <block type="io_highlow"></block>
