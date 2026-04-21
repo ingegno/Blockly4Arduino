@@ -43,6 +43,11 @@ We plan to make the demo site more easily translatable. At the moment, to obtain
 
 # For developers
 
+## Current Situation
+The code is now standalone, as it is no longer compatible with standard ardublockly or blockly. So to hand edit this repository for further changes, with blockly frozen.
+It is our hope we can create a new style blockly app in the future to replace this site.
+
+## Old Situation pre 2022
 The code is based on the branch *blockly4arduino* from [bmcage/ardublockly](https://github.com/bmcage/ardublockly). The directory structure locally should be:
 
 `./git/ardublockly` (branch blockly4arduino from [bmcage](https://github.com/bmcage/ardublockly)
