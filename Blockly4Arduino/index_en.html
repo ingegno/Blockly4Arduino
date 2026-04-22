@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="blockly4Arduino/prettify/arduino.css"/>
   <link rel="stylesheet" type="text/css" href="blockly4Arduino/color.css" media="screen,projection"/>
   <link rel="stylesheet" type="text/css" href="blockly4Arduino/pngflyout.css" media="screen,projection"/>
-
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
   <script src="libs/jquery/jquery-1.12.2.min.js"></script>
   <script src="libs/bootstrap/js/bootstrap.min.js"></script>
@@ -115,11 +116,25 @@
   <table height="100%" width="100%">
     <tr>
       <td>
-          <div class="header" style="width:100%;background-color:#f9f9f9;">
-              <!--Start Logo-->
-              <div class="logo"> <a href="http://ingegno.be"><img src="media/logotop.png" alt="Ingegno" width="800px" /></a></div>
-              <!--End Logo-->
+        <div class="header"
+          style="width:100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; box-sizing: border-box;">
+          <!--Start Title-->
+          <div class="header-title"
+            style="font-family: 'Silkscreen', cursive; font-size: 2.8rem; color: #174d17; padding-left: 20px;">
+            blockly4Arduino
           </div>
+          <!--End Title-->
+          <!--Start Logos-->
+          <div class="header-logos" style="display: flex; gap: 15px; align-items: center; padding-right: 20px;">
+            <a href="https://ingegno.be/"><img src="media/logos/ingegno_logo.png" alt="Ingegno"
+                style="height: 40px; width: auto;" /></a>
+            <a href="https://decreatievestem.be/"><img src="media/logos/CreatieveSTEMLogov04_large.png" alt="Creatieve STEM"
+                style="height: 40px; width: auto;" /></a>
+            <a href="https://www.ziezo.vlaanderen/"><img src="media/logos/Label_STEM-vrijetijd_liggend.png"
+                alt="STEM Vrijetijd" style="height: 40px; width: auto;" /></a>
+          </div>
+          <!--End Logos-->
+        </div>
       </td>
     </tr>
     <tr>
@@ -217,19 +232,9 @@
                         <span class="collapsible_logo">{ }</span>Arduino Source Code
                         </div>
                         <div id="content_ard_collapse" class="collapsible-body">
-                        <pre id="content_arduino" class="content content_height_transition content_arduino_large" style="width: 25%; height: 75%;"></pre>
+                        <pre id="content_arduino" class="content content_height_transition content_arduino_large" style="width: 100%;"></pre>
                         </div>
                     </li>
-
-          <!--li>
-            <div class="collapsible-header" id="xml_collapsible_header">
-              <span class="collapsible_logo">&#60; &#62;</span>Blocks XML
-            </div>
-            <div class="collapsible-body" style="position:relative" id="xml_collapsible_body">
-              <a class="btn-floating btn-large waves-effect waves-light arduino_teal z-depth-1-half" id="button_load_xml"><i class="mdi-action-extension"></i></a>
-              <textarea id="content_xml" class="content content_height_transition content_xml_large" wrap="soft"></textarea>
-            </div>
-          </li-->
                     </ul>
                 </div>
             </td>
@@ -238,7 +243,22 @@
       </td>
     </tr>
   </table>
-  <div id="bottom_link" style="position:absolute;bottom:8px;left:8px;font-size:8px;height:16px;z-index:1;width:250px;"><a href="https://github.com/ingegno/Blockly4Arduino/blob/master/README.md">Info</a> | <a href="index.html">Nederlands</a></div>
+  <div id="bottom_link">
+    <a href="https://github.com/ingegno/Blockly4Arduino/blob/master/README.md">Info</a> | <a
+      href="index.html">Nederlands</a>
+  </div>
+  <script>
+    // Copy the dynamic width logic from the blockly sidebar natively
+    window.addEventListener('resize', function () {
+      var toolbox = document.querySelector('.blocklyToolboxDiv');
+      var link = document.getElementById('bottom_link');
+      if (toolbox && link && toolbox.offsetWidth > 0) {
+        link.style.width = toolbox.offsetWidth + 'px';
+      }
+    });
+    // Trigger an initial calculation shortly after inject
+    setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 500);
+  </script>
   <div id="content_blocks" class="content"></div>
   <!--textarea id="content_arduino" class="content" readonly wrap="off"></textarea-->
   <textarea id="content_xml" class="content" wrap="off"></textarea>

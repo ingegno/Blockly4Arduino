@@ -1,102 +1,13 @@
 
-div>span.blocklyTreeIcon.blocklyTreeIconNone{
-	width:16px;height:16px;
-	float:left;
-	margin:4px;
-	background:url('../media/mark/default.png') no-repeat;
-	background-size: 100% auto; 
-}
-.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/default2.png') no-repeat;
-	background-size: 100% auto; 
-}
-
-
-#\:1>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-        background:url('../media/mark/component.png') no-repeat;
-        background-size: 100% auto; 
-}
-#\:1>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-        background:url('../media/mark/component2.png') no-repeat;
-        background-size: 100% auto; 
-}
-#\:2>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/inout.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:2>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/inout2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:3>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/func.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:3>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/func2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:4>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/repeat.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:4>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/repeat2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:5>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/logic.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:5>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/logic2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:6>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/math.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:6>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/math2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:7>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/text.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:7>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/text2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:8>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/var.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:8>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/var2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:9>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/time.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:9>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/time2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:a>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/music.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:a>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/music2.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:b>div>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/comuni.png') no-repeat;
-	background-size: 100% auto; 
-}
-#\:b>.blocklyTreeSelected>span.blocklyTreeIcon.blocklyTreeIconNone{ 
-	background:url('../media/mark/comuni2.png') no-repeat;
-	background-size: 100% auto; 
-}
+/* Specific icons and colors per category ID */
+#\:1>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'extension'; color: #E47128; }
+#\:2>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'input'; color: #00979C; }
+#\:3>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'code'; color: #995ba5; }
+#\:4>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'loop'; color: #5ba55b; }
+#\:5>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'psychology_alt'; color: #5b80a5; }
+#\:6>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'calculate'; color: #5b67a5; }
+#\:7>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'text_fields'; color: #5ba58c; }
+#\:8>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'database'; color: #a55b80; }
+#\:9>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'schedule'; color: #fab415; }
+#\:a>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'music_note'; color: #d32f2f; }
+#\:b>div>span.blocklyTreeIcon.blocklyTreeIconNone::before { content: 'router'; color: #00979C; }

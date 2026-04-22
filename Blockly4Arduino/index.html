@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly4Arduino: Blockly for Arduino</title>
-  
-  <!-- Materialize, Prettify, and Ardublockly CSS -->
-  <link rel="stylesheet" href="blockly4Arduino/materialize/materialize.css" media="screen,projection"/>
-  <link rel="stylesheet" href="blockly4Arduino/prettify/arduino.css"/>
-  <link rel="stylesheet" type="text/css" href="blockly4Arduino/color.css" media="screen,projection"/>
-  <link rel="stylesheet" type="text/css" href="blockly4Arduino/pngflyout.css" media="screen,projection"/>
 
+  <!-- Materialize, Prettify, and Ardublockly CSS -->
+  <link rel="stylesheet" href="blockly4Arduino/materialize/materialize.css" media="screen,projection" />
+  <link rel="stylesheet" href="blockly4Arduino/prettify/arduino.css" />
+  <link rel="stylesheet" type="text/css" href="blockly4Arduino/color.css" media="screen,projection" />
+  <link rel="stylesheet" type="text/css" href="blockly4Arduino/pngflyout.css" media="screen,projection"/>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
   <script src="libs/jquery/jquery-1.12.2.min.js"></script>
   <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-  
-  <link rel="shortcut icon" href="blockly4Arduino/favicon3.png"/>
+
+  <link rel="shortcut icon" href="blockly4Arduino/favicon3.png" />
   <!-- Blockly4Arduino - These three files contain the compress version-->
   <!--script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
@@ -105,22 +106,37 @@
   <!-- Default language js files, user selection appended to head on load -->
   <script type="text/javascript" src="msg/js/nl.js"></script>
   <script type="text/javascript" src="blockly4Arduino/msg/nl.js"></script>
-  
+
   <script type="text/javascript" src="blockly4Arduino/Blob.js"></script>
   <script type="text/javascript" src="blockly4Arduino/spin.js"></script>
   <script type="text/javascript" src="blockly4Arduino/FileSaver.min.js"></script>
   <script type="text/javascript" src="blockly4Arduino/blockly_helper.js"></script>
 
 </head>
+
 <body onload=''>
   <table height="100%" width="100%">
     <tr>
       <td>
-          <div class="header" style="width:100%;background-color:#f9f9f9;">
-              <!--Start Logo-->
-              <div class="logo"> <a href="http://ingegno.be"><img src="media/logotop.png" alt="Ingegno" width="800px" /></a></div>
-              <!--End Logo-->
+        <div class="header"
+          style="width:100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; box-sizing: border-box;">
+          <!--Start Title-->
+          <div class="header-title"
+            style="font-family: 'Silkscreen', cursive; font-size: 2.8rem; color: #174d17; padding-left: 20px;">
+            blockly4Arduino
           </div>
+          <!--End Title-->
+          <!--Start Logos-->
+          <div class="header-logos" style="display: flex; gap: 15px; align-items: center; padding-right: 20px;">
+            <a href="https://ingegno.be/"><img src="media/logos/ingegno_logo.png" alt="Ingegno"
+                style="height: 40px; width: auto;" /></a>
+            <a href="https://decreatievestem.be/"><img src="media/logos/CreatieveSTEMLogov04_large.png" alt="Creatieve STEM"
+                style="height: 40px; width: auto;" /></a>
+            <a href="https://www.ziezo.vlaanderen/"><img src="media/logos/Label_STEM-vrijetijd_liggend.png"
+                alt="STEM Vrijetijd" style="height: 40px; width: auto;" /></a>
+          </div>
+          <!--End Logos-->
+        </div>
       </td>
     </tr>
     <tr>
@@ -136,69 +152,104 @@
             <td id="tab_xml" class="taboff" onclick="Blockly4Arduino.tabClick('xml')">XML</td>
             <td class="tabmax">
               <div class="dropdown">
-              <div class="btn-group">
-                <button class="btn btn-primary btn-md dropdown-toggle" type="button" data-toggle="dropdown" style="text-transform:None;">Voorbeelden
-                  <span class="caret"></span></button>
+                <div class="btn-group">
+                  <button class="btn btn-primary btn-md dropdown-toggle" type="button" data-toggle="dropdown"
+                    style="text-transform:None;">Voorbeelden
+                    <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li class="dropdown-header">Basis Voorbeelden</li>
-                    <li><input id="ex_Basis01" type="button" class="buttonlink" value="01: Blink" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Blink.xml');" /></li>
-                    <li><input id="ex_Basis02" type="button" class="buttonlink" value="02: Analoog lezen, seriele monitor" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AnologReadSerial_nl.xml');" /></li>
+                    <li><input id="ex_Basis01" type="button" class="buttonlink" value="01: Blink"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Blink.xml');" />
+                    </li>
+                    <li><input id="ex_Basis02" type="button" class="buttonlink"
+                        value="02: Analoog lezen, seriele monitor"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AnologReadSerial_nl.xml');" />
+                    </li>
                     <li class="dropdown-header">Digitaal</li>
-                    <li><input id="ex_D01" type="button" class="buttonlink" value="01: Blink zonder wachten" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'BlinkNoDelay_nl.xml');" /></li>
+                    <li><input id="ex_D01" type="button" class="buttonlink" value="01: Blink zonder wachten"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'BlinkNoDelay_nl.xml');" />
+                    </li>
                     <li class="dropdown-header">LedUpKidz</li>
-                    <li><input id="ex_LUK01" type="button" class="buttonlink" value="01: Flikkeren" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_01_aan_uit.xml');" /></li>
-                    <li><input id="ex_LUK02" type="button" class="buttonlink" value="02: Ronddraaien" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_02_ronddraaien.xml');" /></li>
-                    <li><input id="ex_LUK03" type="button" class="buttonlink" value="03: Sneller en sneller" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_03_versnellen.xml');" /></li>
-                    <li><input id="ex_LUK04" type="button" class="buttonlink" value="04: Meerdere effecten" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_04_combineren.xml');" /></li>
-                    <li><input id="ex_LUK05" type="button" class="buttonlink" value="05: Extra: Loops" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_05_loops.xml');" /></li>
+                    <li><input id="ex_LUK01" type="button" class="buttonlink" value="01: Flikkeren"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_01_aan_uit.xml');" />
+                    </li>
+                    <li><input id="ex_LUK02" type="button" class="buttonlink" value="02: Ronddraaien"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_02_ronddraaien.xml');" />
+                    </li>
+                    <li><input id="ex_LUK03" type="button" class="buttonlink" value="03: Sneller en sneller"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_03_versnellen.xml');" />
+                    </li>
+                    <li><input id="ex_LUK04" type="button" class="buttonlink" value="04: Meerdere effecten"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_04_combineren.xml');" />
+                    </li>
+                    <li><input id="ex_LUK05" type="button" class="buttonlink" value="05: Extra: Loops"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_05_loops.xml');" />
+                    </li>
                     <!--li class="dropdown-header">Microduino</li>
                     <li><input id="ex_MD01" type="button" class="buttonlink" value="01: Sweep Servo" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_SweepServo.xml');" /></li>
                     <li><input id="ex_MD02" type="button" class="buttonlink" value="02: Roteer Servo" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_RotateServo.xml');" /></li>
                     <li><input id="ex_MD03" type="button" class="buttonlink" value="03: LED met Knop" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_ButtonLed.xml');" /></li>
                     <li><input id="ex_MD04" type="button" class="buttonlink" value="04: Geluid met Knop" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'MD_ButtonSound.xml');" /></li-->
                     <li class="dropdown-header">DCS Kits</li>
-                    <li><input id="ex_DIO01" type="button" class="buttonlink" value="01: Diorama voorbeeld" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Diorama_01_2tracks_effect.xml');" /></li>
-                    <li><input id="ex_DCS02" type="button" class="buttonlink" value="02: Zandloper" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Zandloper code.xml');" /></li>
+                    <li><input id="ex_DIO01" type="button" class="buttonlink" value="01: Diorama voorbeeld"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Diorama_01_2tracks_effect.xml');" />
+                    </li>
+                    <li><input id="ex_DCS02" type="button" class="buttonlink" value="02: Zandloper"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'Zandloper code.xml');" />
+                    </li>
                     <li class="dropdown-header">AllBot</li>
-                    <li><input id="ex_allbot01" type="button" class="buttonlink" value="01: Calibreer VR408" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_calibrateServos_VR408_nl.xml');" /></li>
-                    <li><input id="ex_allbot02" type="button" class="buttonlink" value="02: Allbot VR408 Wandel en Wuif" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_VR408_WalkWave.xml');" /></li>
-                    <li><input id="ex_allbot03" type="button" class="buttonlink" value="03: Allbot VR408 Afstandsbediening" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_remote_control.xml');" /></li>
+                    <li><input id="ex_allbot01" type="button" class="buttonlink" value="01: Calibreer VR408"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_calibrateServos_VR408_nl.xml');" />
+                    </li>
+                    <li><input id="ex_allbot02" type="button" class="buttonlink" value="02: Allbot VR408 Wandel en Wuif"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_VR408_WalkWave.xml');" />
+                    </li>
+                    <li><input id="ex_allbot03" type="button" class="buttonlink"
+                        value="03: Allbot VR408 Afstandsbediening"
+                        onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'AllBot/AllBot_remote_control.xml');" />
+                    </li>
                   </ul>
-                <button type="button" class="btn btn-default btn-md" onclick="uploadClick()">
-                  <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Opladen">
-                    <span class="glyphicon glyphicon-play-circle"></span>
-                  </a>
-                </button>
-                <button type="button" class="btn btn-success btn-md" onclick="copyCode()">
-                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Code Kopiëren">
-                    <span class="glyphicon glyphicon glyphicon-copy"></span>
-                  </a>
-                </button>
-                <button type="button" class="btn btn-warning btn-md" onclick="discard()">
-                   <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Herbeginnen">
-                     <span class="glyphicon glyphicon-trash"></span>
+                  <button type="button" class="btn btn-default btn-md" onclick="uploadClick()">
+                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+                      data-original-title="Opladen">
+                      <span class="glyphicon glyphicon-play-circle"></span>
                     </a>
-                </button>
-                <button type="button" class="btn btn-info btn-md" onclick="saveCode()">
-                   <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Code Opslaan">
-                    <span class="glyphicon glyphicon-floppy-save"></span>
-                  </a>
-                </button>
-                <button type="button" class="btn btn-info btn-md" onclick="save()">
-                  <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="XML Opslaan">
-                    <span class="glyphicon glyphicon-save"></span>
-                  </a>
-                </button>
-                <button type="button" class="btn btn-info btn-md" id="fakeload">
-                   <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="XML Laden">
-                    <span class="glyphicon glyphicon-open"></span>
-                  </a>
-                </button>
-                
-                  
-                <input type="file" id="load" style="display: none;"/>
-                <!--button class="launch" onclick="runJS()">Run Program</button-->
-              </div>
+                  </button>
+                  <button type="button" class="btn btn-success btn-md" onclick="copyCode()">
+                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+                      data-original-title="Code Kopiëren">
+                      <span class="glyphicon glyphicon glyphicon-copy"></span>
+                    </a>
+                  </button>
+                  <button type="button" class="btn btn-warning btn-md" onclick="discard()">
+                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+                      data-original-title="Herbeginnen">
+                      <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                  </button>
+                  <button type="button" class="btn btn-info btn-md" onclick="saveCode()">
+                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+                      data-original-title="Code Opslaan">
+                      <span class="glyphicon glyphicon-floppy-save"></span>
+                    </a>
+                  </button>
+                  <button type="button" class="btn btn-info btn-md" onclick="save()">
+                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+                      data-original-title="XML Opslaan">
+                      <span class="glyphicon glyphicon-save"></span>
+                    </a>
+                  </button>
+                  <button type="button" class="btn btn-info btn-md" id="fakeload">
+                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+                      data-original-title="XML Laden">
+                      <span class="glyphicon glyphicon-open"></span>
+                    </a>
+                  </button>
+
+
+                  <input type="file" id="load" style="display: none;" />
+                  <!--button class="launch" onclick="runJS()">Run Program</button-->
+                </div>
               </div>
             </td>
           </tr>
@@ -211,96 +262,110 @@
           <tr height="100%" width="100%">
             <td height="99%" id="content_area"></td>
             <td height="99%" width="25%">
-                <div class="col s12 m12 l4">
-                    <ul class="collapsible z-depth-1" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header active">
-                        <span class="collapsible_logo">{ }</span>Arduino Bron Code
-                        </div>
-                        <div id="content_ard_collapse" class="collapsible-body">
-                        <pre id="content_arduino" class="content content_height_transition content_arduino_large" style="width: 25%; height: 75%;"></pre>
-                        </div>
-                    </li>
-                    <!--li>
-                      <div class="collapsible-header" id="xml_collapsible_header">
-                        <span class="collapsible_logo">&#60; &#62;</span>Blocks XML
-                      </div>
-                      <div class="collapsible-body" style="position:relative" id="xml_collapsible_body">
-                        <a class="btn-floating btn-large waves-effect waves-light arduino_teal z-depth-1-half" id="button_load_xml"><i class="mdi-action-extension"></i></a>
-                        <textarea id="content_xml" class="content_sidebar content_height_transition content_xml_large" wrap="soft"></textarea>
-                      </div>
-                    </li-->
-                    </ul>
-                </div>
+              <div class="col s12 m12 l4">
+                <ul class="collapsible z-depth-1" data-collapsible="accordion">
+                  <li>
+                    <div class="collapsible-header active">
+                      <span class="collapsible_logo">{ }</span>Arduino Bron Code
+                    </div>
+                    <div id="content_ard_collapse" class="collapsible-body">
+                      <pre id="content_arduino" class="content content_height_transition content_arduino_large"
+                        style="width: 100%;"></pre>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </td>
           </tr>
         </table>
       </td>
     </tr>
   </table>
-  <div id="bottom_link" style="position:absolute;bottom:8px;left:8px;font-size:8px;height:16px;z-index:1;width:250px;"><a href="https://github.com/ingegno/Blockly4Arduino/blob/master/README.md">Info</a> | <a href="index_en.html">English</a></div>
+  <div id="bottom_link">
+    <a href="https://github.com/ingegno/Blockly4Arduino/blob/master/README.md">Info</a> | <a
+      href="index_en.html">English</a>
+  </div>
+  <script>
+    // Copy the dynamic width logic from the blockly sidebar natively
+    window.addEventListener('resize', function () {
+      var toolbox = document.querySelector('.blocklyToolboxDiv');
+      var link = document.getElementById('bottom_link');
+      if (toolbox && link && toolbox.offsetWidth > 0) {
+        link.style.width = toolbox.offsetWidth + 'px';
+      }
+    });
+    // Trigger an initial calculation shortly after inject
+    setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 500);
+  </script>
   <div id="content_blocks" class="content"></div>
   <!--textarea id="content_arduino" class="content" readonly wrap="off"></textarea-->
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <div id="content_codebender" class="content" style="visibility:hidden">
-      <div>
-        Kies type board:
-        <select class="form-control" id="boardType">
-            <option value='{"builder":"arduino:avr:uno","ext":"uno"}'>Arduino  Uno</option>
-            <option value='{"builder":"arduino:avr:mega:cpu=atmega1280","ext":"mega"}'>Arduino  Mega1280</option>
-            <option value='{"builder":"arduino:avr:mega:cpu=atmega2560","ext":"mega"}'>Arduino  Mega2560</option>
-            <option value='{"builder":"arduino:avr:megaAdk","ext":"adk"}'>Arduino  ADK</option>
-            <option value='{"builder":"arduino:avr:leonardo","ext":"leonardo"}'>Arduino  Leonardo</option>
-            <option value='{"builder":"arduino:avr:micro","ext":"micro"}'>Arduino  Micro</option>
-            <option value='{"builder":"arduino:avr:nano:cpu=atmega328","ext":"nano"}'>Arduino Nano328</option>
-            <option value='{"builder":"arduino:avr:lilypad-usb","ext":"lilypad-usb"}'>Arduino Lilypad USB</option>
-            <option value='{"builder":"arduino:avr:diecimila:cpu=atmega168","ext":"duemilanove168"}'>Arduino Duemilanove168</option>
-            <option value='{"builder":"arduino:avr:yun","ext":"yun"}'>Arduino Yun</option>
-        </select>
-        Kies poort:
-        <select class="form-control" id="portType">		
-        </select><br/>
-        
-        <button type="button" class="btn btn-default btn-md" onclick="setCompilerAddress()">
-          <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Compiler IP-adres">
-            IP-Adres
-            <!--span class="glyphicon glyphicon-option-horizontal"></span-->
-          </a>
-        </button>
-        <button type="button" class="btn btn-default btn-md" onclick="setCompilerPort()">
-          <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Compiler Port">
-            Port
-            <!--span class="glyphicon glyphicon-option-horizontal"></span-->
-          </a>
-        </button>
-        <button type="button" class="btn btn-default btn-md" onclick="setExtensionId()">
-          <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Chrome Extension ID">
-            Extensie
-            <!--span class="glyphicon glyphicon-option-horizontal"></span-->
-          </a>
-        </button>
-        <button type="button" class="btn btn-default btn-md" onclick="verifyCode()">
-          <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verifiëren">
-            <span class="glyphicon glyphicon-check"></span>
-          </a>
-        </button>
-        <button type="button" class="btn btn-default btn-md" onclick="uploadCode()">
-          <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Opladen">
-            <span class="glyphicon glyphicon-play-circle"></span>
-          </a>
-        </button>
-      </div><br/>
-    
+    <div>
+      Kies type board:
+      <select class="form-control" id="boardType">
+        <option value='{"builder":"arduino:avr:uno","ext":"uno"}'>Arduino Uno</option>
+        <option value='{"builder":"arduino:avr:mega:cpu=atmega1280","ext":"mega"}'>Arduino Mega1280</option>
+        <option value='{"builder":"arduino:avr:mega:cpu=atmega2560","ext":"mega"}'>Arduino Mega2560</option>
+        <option value='{"builder":"arduino:avr:megaAdk","ext":"adk"}'>Arduino ADK</option>
+        <option value='{"builder":"arduino:avr:leonardo","ext":"leonardo"}'>Arduino Leonardo</option>
+        <option value='{"builder":"arduino:avr:micro","ext":"micro"}'>Arduino Micro</option>
+        <option value='{"builder":"arduino:avr:nano:cpu=atmega328","ext":"nano"}'>Arduino Nano328</option>
+        <option value='{"builder":"arduino:avr:lilypad-usb","ext":"lilypad-usb"}'>Arduino Lilypad USB</option>
+        <option value='{"builder":"arduino:avr:diecimila:cpu=atmega168","ext":"duemilanove168"}'>Arduino Duemilanove168
+        </option>
+        <option value='{"builder":"arduino:avr:yun","ext":"yun"}'>Arduino Yun</option>
+      </select>
+      Kies poort:
+      <select class="form-control" id="portType">
+      </select><br />
+
+      <button type="button" class="btn btn-default btn-md" onclick="setCompilerAddress()">
+        <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+          data-original-title="Compiler IP-adres">
+          IP-Adres
+          <!--span class="glyphicon glyphicon-option-horizontal"></span-->
+        </a>
+      </button>
+      <button type="button" class="btn btn-default btn-md" onclick="setCompilerPort()">
+        <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+          data-original-title="Compiler Port">
+          Port
+          <!--span class="glyphicon glyphicon-option-horizontal"></span-->
+        </a>
+      </button>
+      <button type="button" class="btn btn-default btn-md" onclick="setExtensionId()">
+        <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+          data-original-title="Chrome Extension ID">
+          Extensie
+          <!--span class="glyphicon glyphicon-option-horizontal"></span-->
+        </a>
+      </button>
+      <button type="button" class="btn btn-default btn-md" onclick="verifyCode()">
+        <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#"
+          data-original-title="Verifiëren">
+          <span class="glyphicon glyphicon-check"></span>
+        </a>
+      </button>
+      <button type="button" class="btn btn-default btn-md" onclick="uploadCode()">
+        <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Opladen">
+          <span class="glyphicon glyphicon-play-circle"></span>
+        </a>
+      </button>
+    </div><br />
+
     <b>Status:</b>
-    <div id="lblStatus" style="overflow: auto; white-space: pre; height: 150px"><!-- HERE COME THE MESSAGES OF COMPILER --></div><br/>
-    
+    <div id="lblStatus" style="overflow: auto; white-space: pre; height: 150px">
+      <!-- HERE COME THE MESSAGES OF COMPILER -->
+    </div><br />
+
     <div class="infocollapsiblecontent" display:none>
       <p>
-      Gebruik een van de volgende tools om je Arduino te programmeren:
+        Gebruik een van de volgende tools om je Arduino te programmeren:
       </p>
-    <ul>
-      <!--li style="list-style-type: circle;margin-left: 20px;">Chrome OS of Chrome browser: <a href="https://chrome.google.com/webstore/detail/chromeduino/dmkincdpchiadkhhocmbpjljebfifgbl">ChromeDuino</a>. Eenmaal deze app geinstalleerd is in Chrome, kun je de app starten via de <b>Launch</b> knop of via het Apps startscherm.
+      <ul>
+        <!--li style="list-style-type: circle;margin-left: 20px;">Chrome OS of Chrome browser: <a href="https://chrome.google.com/webstore/detail/chromeduino/dmkincdpchiadkhhocmbpjljebfifgbl">ChromeDuino</a>. Eenmaal deze app geinstalleerd is in Chrome, kun je de app starten via de <b>Launch</b> knop of via het Apps startscherm.
         <div id="" class="app-contents">
         <div class="app-img-container launch-click-target" aria-hidden="true" title="ChromeDuino" style="height: 64px; width: 64px;">
         <img class="" alt="" src="chrome://extension-icon/dmkincdpchiadkhhocmbpjljebfifgbl/128/1">
@@ -308,916 +373,926 @@
         <span class="title launch-click-target" title="ChromeDuino">ChromeDuino</span>
         </div> 
       </li-->
-      <li style="list-style-type: circle;margin-left: 20px;">ChromeOS: Installeer onze extensie: <a href="https://chrome.google.com/webstore/detail/limahhklinobffpljkonpenchljefiag/">Ingegno Blockly4Arduino Extension</a>. Vervolgens heb je een <a href="https://github.com/bmcage/ArduinoBuilder">ArduinoBuilder server</a> nodig die kan compileren voor jou.</li>
-      <li style="list-style-type: circle;margin-left: 20px;">ChromeOS: Om seriele output van de Arduino te zien, installeer de extensie: <a href="https://chrome.google.com/webstore/detail/arduino-chrome-serial-mon/opgcocnebgmkhcafcclmgfldjhlnacjd/">Arduino Chrome Serial Monitor</a></li>
-      <li style="list-style-type: circle;margin-left: 20px;">Windows, Mac, Linux: <a href="https://create.arduino.cc/">online Arduino Create</a> of doe zoals voor ChromeOS met de google chrome web browser</li>
-      <li style="list-style-type: circle;margin-left: 20px;">Windows, Mac, Linux: <a href="https://www.arduino.cc/en/Main/Software">offline Arduino IDE software</a></li>
-      <li style="list-style-type: circle;margin-left: 20px;">Chrome, Firefox: Het betalende <a href="https://edu.codebender.cc/">edu.codebender.cc</a>. In deze app kun je bibliotheken en andere chips dan de arduino gebruiken.</li>
-    </ul>
+        <li style="list-style-type: circle;margin-left: 20px;">ChromeOS: Installeer onze extensie: <a
+            href="https://chrome.google.com/webstore/detail/limahhklinobffpljkonpenchljefiag/">Ingegno Blockly4Arduino
+            Extension</a>. Vervolgens heb je een <a href="https://github.com/bmcage/ArduinoBuilder">ArduinoBuilder
+            server</a> nodig die kan compileren voor jou.</li>
+        <li style="list-style-type: circle;margin-left: 20px;">ChromeOS: Om seriele output van de Arduino te zien,
+          installeer de extensie: <a
+            href="https://chrome.google.com/webstore/detail/arduino-chrome-serial-mon/opgcocnebgmkhcafcclmgfldjhlnacjd/">Arduino
+            Chrome Serial Monitor</a></li>
+        <li style="list-style-type: circle;margin-left: 20px;">Windows, Mac, Linux: <a
+            href="https://create.arduino.cc/">online Arduino Create</a> of doe zoals voor ChromeOS met de google chrome
+          web browser</li>
+        <li style="list-style-type: circle;margin-left: 20px;">Windows, Mac, Linux: <a
+            href="https://www.arduino.cc/en/Main/Software">offline Arduino IDE software</a></li>
+        <li style="list-style-type: circle;margin-left: 20px;">Chrome, Firefox: Het betalende <a
+            href="https://edu.codebender.cc/">edu.codebender.cc</a>. In deze app kun je bibliotheken en andere chips dan
+          de arduino gebruiken.</li>
+      </ul>
     </div>
     <button class="infocollapsible">Info over Uploaden</button>
   </div>
 
   <xml id="toolbox" style="display: none">
-  <category id="catInputOutput" name="In/Output">
-    <!--block type="io_pin_dig"></block>
+    <category id="catInputOutput" name="In/Output">
+      <!--block type="io_pin_dig"></block>
     <block type="io_pin_an"></block>
     <block type="io_pin_pwm"></block-->
-    <block type="io_digitalwrite">
-      <value name="STATE">
-        <block type="io_highlow"></block>
-      </value>
-    </block>
-    <!--block type="io_digitalwrite_var">
-      <value name="STATE">
-        <block type="io_highlow"></block>
-      </value>
-    </block-->
-    <block type="io_digitalread"></block>
-    <!--block type="io_digitalread_var"></block-->
-    <!--block type="io_builtin_led">
-      <value name="STATE">
-        <block type="io_highlow"></block>
-      </value>
-    </block-->
-    <block type="io_analogwrite"></block>
-    <!--block type="io_analogwrite_var"></block-->
-    <block type="io_analogread"></block>
-    <!--block type="io_analogread_var"></block-->
-    <block type="io_highlow"></block>
-    <block type="io_pulsein">
-      <value name="PULSETYPE">
-        <shadow type="io_highlow"></shadow>
-      </value>
-    </block>
-    <block type="io_pulsetimeout">
-      <value name="PULSETYPE">
-       <shadow type="io_highlow"></shadow>
-      </value>
-      <value name="TIMEOUT">
-        <block type="math_number"></block>
-      </value>
-    </block>
-    <block type="io_pulsein_var">
-      <value name="PULSETYPE">
-        <shadow type="io_highlow"></shadow>
-      </value>
-    </block>
-    <block type="io_pulsetimeout_var">
-      <value name="PULSETYPE">
-       <shadow type="io_highlow"></shadow>
-      </value>
-      <value name="TIMEOUT">
-        <block type="math_number"></block>
-      </value>
-    </block>
-    <block type="analogsensor_config_hub"></block>
-    <block type="analogsensor_read"></block>
-    <block type="digitalinput_config_hub"></block>
-    <block type="digitalinput_read"></block>
-    <block type="button_setup"></block>
-    <block type="button_input_pullup_setup"></block>
-    <block type="button_read"></block>
-    <block type="button_input">
-      <field name="WAIT_INPUT">FALSE</field>
-    </block>
-    <block type="digitaloutput_config_hub"></block>
-    <block type="digitaloutput_write"></block>
-    <block type="pwmoutput_config_hub"></block>
-    <block type="pwmoutput_write"></block>
-  </category>
-  <category id="catFunctions" name="Functies" custom="PROCEDURE"></category>
-  <category id="catLoops" name="Herhalen">
-    <block type="controls_repeat_ext">
-      <value name="TIMES">
-        <block type="math_number">
-          <field name="NUM">10</field>
-        </block>
-      </value>
-    </block>
-    <block type="controls_whileUntil"></block>
-    <block type="controls_for">
-      <value name="FROM">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-      <value name="TO">
-        <block type="math_number">
-          <field name="NUM">10</field>
-        </block>
-      </value>
-      <value name="BY">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-    </block>
-    <block type="controls_flow_statements"></block>
-  </category>
-  <category id="catLogic" name="Logica">
-    <block type="controls_if"></block>
-    <block type="logic_compare"></block>
-    <block type="logic_operation"></block>
-    <block type="logic_negate"></block>
-    <block type="logic_boolean"></block>
-    <block type="logic_null"></block>
-    <block type="logic_ternary"></block>
-  </category>
-  <category id="catMath" name="Wiskunde">
-    <block type="math_number"></block>
-    <block type="math_arithmetic"></block>
-    <block type="math_single"></block>
-    <block type="math_trig"></block>
-    <block type="math_constant"></block>
-    <block type="math_number_property"></block>
-    <block type="math_change">
-      <value name="DELTA">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-    </block>
-    <block type="math_round"></block>
-    <block type="math_modulo"></block>
-    <block type="math_constrain">
-      <value name="LOW">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-      <value name="HIGH">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-    </block>
-    <block type="math_random_int">
-      <value name="FROM">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-      <value name="TO">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-    </block>
-    <block type="math_random_float"></block>
-    <block type="base_map"></block>
-    <block type="array_create_with"></block>
-    <block type="array_create_with_length"></block>
-    <block type="array_getIndex">
-      <value name="AT">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="array_setIndex">
-      <value name="AT">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="array_getLength"></block>
-  </category>
-  <category id="catText" name="Tekst">
-    <block type="text"></block>
-    <block type="text_join"></block>
-    <block type="text_append">
-      <value name="TEXT">
-        <block type="text"></block>
-      </value>
-    </block>
-    <block type="text_length"></block>
-    <block type="text_isEmpty"></block>
-    <block type="ard_comment">
-      <value name="TEXT">
-        <block type="text"></block>
-      </value>
-    </block>
-//    <!--block type="text_trim"></block Need to update block -->
-//    <!--block type="text_print"></block Part of the serial comms -->
-  </category>
-  <category id="catVariables" name="Variabelen">
-    <block type="variables_get"></block>
-    <block type="variables_set"></block>
-    <block type="variables_set">
-      <value name="VALUE">
-        <block type="variables_set_type"></block>
-      </value>
-    </block>
-    <block type="variables_set_type"></block>
-  </category>
-  <category id="catTime" name="Tijd">
-    <block type="time_delay">
-      <value name="DELAY_TIME_MILI">
-        <block type="math_number">
-          <field name="NUM">1000</field>
-        </block>
-      </value>
-    </block>
-    <block type="time_delaymicros">
-      <value name="DELAY_TIME_MICRO">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-    </block>
-    <block type="time_millis"></block>
-    <block type="time_micros"></block>
-    <block type="infinite_loop"></block>
-  </category>
-  <sep></sep>
-  <category id="catComponent" name="Componenten">
-    <block type="core_hub_component"></block>
-    <block type="led_config_hub"></block>
-    <block type="neopixel_config_hub">
-      <value name="NUMBER">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-    </block>
-    <block type="analogsensor_config_hub"></block>
-    <block type="digitalinput_config_hub"></block>
-    <block type="button_setup"></block>
-    <block type="button_input_pullup_setup"></block>
-    <block type="digitaloutput_config_hub"></block>
-    <block type="pwmoutput_config_hub"></block>
-    <block type="buzzer_config_hub"></block>
-    <block type="servo_config_hub"></block>
-    <block type="stepper_config_hub">
-      <value name="STEPPER_STEPS">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-      <value name="STEPPER_SPEED">
-        <block type="math_number">
-          <field name="NUM">10</field>
-        </block>
-      </value>
-    </block>
-  </category>
-  <category id="catTone" name="Licht&Geluid">
-    <block type="led_config_hub"></block>
-    <block type="neopixel_config_hub">
-      <value name="NUMBER">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-    </block>
-    <block type="buzzer_config_hub"></block>
-    <block type="led_digitalwrite_onoff"></block>
-    <block type="led_digitalwrite">
-      <value name="STATE">
-        <shadow type="io_highlow"></shadow>
-      </value>
-    </block>
-    <block type="neopixel_colourpick_write">
-      <value name="LEDPIXEL">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-    </block>
-    <block type="neopixel_colourpick_dim_write">
-      <value name="LEDPIXEL">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-      <value name="BRIGHTNESS">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-    </block>
-    <block type="neopixel_write">
-      <value name="LEDPIXEL">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
-      <value name="RED">
-        <block type="math_number">
-          <field name="NUM">255</field>
-        </block>
-      </value>
-      <value name="GREEN">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-      <value name="BLUE">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="io_toneduration">
-      <value name="FREQUENCY">
-        <shadow type="math_number">
-          <field name="NUM">220</field>
-        </shadow>
-      </value>
-      <value name="DURATION">
-        <shadow type="math_number">
-          <field name="NUM">1000</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="io_pitch"></block>
-    <block type="io_tonepitch">
-      <value name="DURATION">
-        <shadow type="math_number">
-          <field name="NUM">1000</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="io_tone_buz">
-      <value name="FREQUENCY">
-        <shadow type="math_number">
-          <field name="NUM">220</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="io_notone_buz"></block>
-    <block type="io_tone">
-      <field name="TONEPIN">0</field>
-      <value name="FREQUENCY">
-        <shadow type="math_number">
-          <field name="NUM">220</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="io_notone"></block>
-  </category>
-  <category id="catMotors" name="Motoren">
-    <block type="servo_config_hub"></block>
-    <block type="stepper_config_hub">
-      <value name="STEPPER_STEPS">
-        <block type="math_number">
-          <field name="NUM">100</field>
-        </block>
-      </value>
-      <value name="STEPPER_SPEED">
-        <block type="math_number">
-          <field name="NUM">10</field>
-        </block>
-      </value>
-    </block>
-    <block type="servohub_write">
-      <value name="SERVO_ANGLE">
-        <block type="math_number">
-          <field name="NUM">90</field>
-        </block>
-      </value>
-    </block>
-    <block type="servohub_write2">
-      <value name="SERVO_SPEED">
-        <block type="math_number">
-          <field name="NUM">50</field>
-        </block>
-      </value>
-    </block>
-    <block type="servohub_read"></block>
-    <block type="stepper_step">
-      <value name="STEPPER_STEPS">
-        <block type="math_number">
-          <field name="NUM">2</field>
-        </block>
-      </value>
-    </block>
-    <block type="stepper_speed">
-      <value name="STEPPER_SPEED">
-        <block type="math_number">
-          <field name="NUM">10</field>
-        </block>
-      </value>
-    </block>
-    <block type="stepper_rotate_number">
-      <value name="ANGLE">
-        <block type="math_number">
-          <field name="NUM">45</field>
-        </block>
-      </value>
-    </block>
-    <block type="stepper_rotate"></block>
-    <block type="stepper_restart"></block>
-    <block type="stepper_isrotating"></block>
-  </category>
-  <category id="catComms" name="Comms">
-    <block type="serial_setup"><field name="SPEED">9600</field></block>
-    <block type="serial_print"></block>
-    <block type="text_prompt_ext">
-      <value name="TEXT">
-        <block type="text"></block>
-      </value>
-    </block>
-    <block type="spi_setup"></block>
-    <block type="spi_transfer"></block>
-    <block type="spi_transfer_return"></block>
-  </category>
-  <category id="catDisplays" name="Schermen">
-    <block type="tft_config"></block>
-    <block type="tft_text"></block>
-    <block type="tft_backgroundcolor"></block>
-    <block type="tft_sprite8x8"></block>
-    <block type="colour_picker"></block>
-    <block type="colour_random"></block>
-    <block type="colour_rgb255"></block>
-    <!--block type="colour_blend"></block-->
-    <block type="oled_config"></block>
-    <block type="oled_font"></block>
-    <block type="oled_print"></block>
-    <block type="oled_print_number"></block>
-    <block type="oled_show"></block>
-    <block type="oled_clear"></block>
-    <block type="segment_config"></block>
-    <block type="segment_write_number">
-        <value name="SEG_VAL">
-            <block type="math_number">
-                <field name="NUM">1</field>
-            </block>
+      <block type="io_digitalwrite">
+        <value name="STATE">
+          <block type="io_highlow"></block>
         </value>
-    </block>
-    <block type="segment_write_singleseg"></block>
-    <block type="tft_sprite16x16"></block>
-    <block type="tft_line"></block>
-    <block type="tft_rect"></block>
-    <block type="tft_circ"></block>
-  </category>
-  <sep></sep>
-  <category id="catExp" name="Extra Sets">
-    <category id="catSensors" name="Sensors">
-      <block type="DHT_config_hub"></block>
-      <block type="DHT_readTemp"></block>
-      <block type="DHT_readRH"></block>
-      <block type="DHT_readHeatIndex"></block>
+      </block>
+      <!--block type="io_digitalwrite_var">
+      <value name="STATE">
+        <block type="io_highlow"></block>
+      </value>
+    </block-->
+      <block type="io_digitalread"></block>
+      <!--block type="io_digitalread_var"></block-->
+      <!--block type="io_builtin_led">
+      <value name="STATE">
+        <block type="io_highlow"></block>
+      </value>
+    </block-->
+      <block type="io_analogwrite"></block>
+      <!--block type="io_analogwrite_var"></block-->
+      <block type="io_analogread"></block>
+      <!--block type="io_analogread_var"></block-->
+      <block type="io_highlow"></block>
+      <block type="io_pulsein">
+        <value name="PULSETYPE">
+          <shadow type="io_highlow"></shadow>
+        </value>
+      </block>
+      <block type="io_pulsetimeout">
+        <value name="PULSETYPE">
+          <shadow type="io_highlow"></shadow>
+        </value>
+        <value name="TIMEOUT">
+          <block type="math_number"></block>
+        </value>
+      </block>
+      <block type="io_pulsein_var">
+        <value name="PULSETYPE">
+          <shadow type="io_highlow"></shadow>
+        </value>
+      </block>
+      <block type="io_pulsetimeout_var">
+        <value name="PULSETYPE">
+          <shadow type="io_highlow"></shadow>
+        </value>
+        <value name="TIMEOUT">
+          <block type="math_number"></block>
+        </value>
+      </block>
+      <block type="analogsensor_config_hub"></block>
+      <block type="analogsensor_read"></block>
+      <block type="digitalinput_config_hub"></block>
+      <block type="digitalinput_read"></block>
+      <block type="button_setup"></block>
+      <block type="button_input_pullup_setup"></block>
+      <block type="button_read"></block>
+      <block type="button_input"></block>
+      <block type="digitaloutput_config_hub"></block>
+      <block type="digitaloutput_write"></block>
+      <block type="pwmoutput_config_hub"></block>
+      <block type="pwmoutput_write"></block>
     </category>
-    <category id="catDiorama" name="Diorama">
-      <block type="diorama_hub_component">
-        <field name="STEPPER_NAME">StepperDiorama</field>
-        <value name="STEPPER_STEPS">
+    <category id="catFunctions" name="Functies" custom="PROCEDURE"></category>
+    <category id="catLoops" name="Herhalen">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
           <block type="math_number">
-            <field name="NUM">2050</field>
-          </block>
-        </value>
-        <value name="STEPPER_SPEED">
-          <block type="math_number">
-            <field name="NUM">5</field>
+            <field name="NUM">10</field>
           </block>
         </value>
       </block>
-      <block type="diorama_button_declaration"></block>
-      <block type="dio_playtrack">
-        <value name="TRACK">
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="BY">
           <block type="math_number">
             <field name="NUM">1</field>
           </block>
         </value>
       </block>
-      <block type="dio_displaytext">
-        <value name="TEXT">
-          <block type="text">
-            <field name="TEXT">HELLO</field>
+      <block type="controls_flow_statements"></block>
+    </category>
+    <category id="catLogic" name="Logica">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
+    </category>
+    <category id="catMath" name="Wiskunde">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+      <block type="math_trig"></block>
+      <block type="math_constant"></block>
+      <block type="math_number_property"></block>
+      <block type="math_change">
+        <value name="DELTA">
+          <block type="math_number">
+            <field name="NUM">1</field>
           </block>
         </value>
       </block>
-      <block type="dio_louder"></block>
-      <block type="dio_quieter"></block>
-      <block type="dio_setvolume">
-        <value name="VOLUME">
+      <block type="math_round"></block>
+      <block type="math_modulo"></block>
+      <block type="math_constrain">
+        <value name="LOW">
           <block type="math_number">
-            <field name="NUM">7</field>
+            <field name="NUM">1</field>
           </block>
         </value>
-      </block>
-      <block type="dio_trackplaying"></block>
-      <block type="dio_resetbtnpress"></block>
-      <block type="dio_resetbtnnrpress"></block>
-      <block type="dio_stoptrack"></block>
-    </category>
-    <category id="catMD" name="Microduino">
-      <category id="catMDCore" name="Modules">
-        <block type="md_modules"></block>
-        <block type="mcookie_coreusb"></block>
-        <block type="mcookie_hub"></block>
-        <block type="mcookie_power"></block>
-        <block type="mcookie_audio_setup">
-          <value name="VOLUME">
-            <block type="math_number">
-              <field name="NUM">25</field>
-            </block>
-          </value>
-        </block>
-        <block type="mcookie_audio_amplifier"></block>
-      </category>
-      <category id="catMDAudio" name="Audio">
-        <block type="mcookie_audio_play">
-          <value name="AUDIONAME">
-            <block type="math_number">
-              <field name="NUM">1</field>
-            </block>
-          </value>
-        </block>
-        <block type="mcookie_audio_pause"></block>      
-      </category>
-      <category id="catMDAct" name="Beweging">
-        <block type="mcookie_servo_setup">
-          <value name="SERVOTOPTYPE">
-            <shadow type="mcookie_servo_type"></shadow>
-          </value>
-          <value name="SERVOBOTTOMTYPE">
-            <shadow type="mcookie_servo_type"></shadow>
-          </value>
-        </block>
-        <block type="mcookie_servo_type">
-        </block>
-        <block type="servohub_write">
-          <value name="SERVO_ANGLE">
-            <block type="math_number">
-              <field name="NUM">90</field>
-            </block>
-          </value>
-        </block>
-        <block type="servohub_write2">
-          <value name="SERVO_SPEED">
-            <block type="math_number">
-              <field name="NUM">50</field>
-            </block>
-          </value>
-        </block>
-        <block type="servohub_read"></block>
-      </category>
-      <category id="catMDControl" name="Knoppen">
-        <block type="mcookie_crashbutton_setup"></block>
-        <block type="mcookie_button_digitalread"></block>
-        <block type="button_input">
-          <field name="WAIT_INPUT">FALSE</field>
-        </block>
-      </category>
-      <category id="catMDLight" name="Licht">
-        <block type="mcookie_neopixel_setup">
-          <value name="NUMBER">
-            <block type="math_number">
-              <field name="NUM">1</field>
-            </block>
-          </value></block>
-        <block type="neopixel_colourpick_write">
-          <value name="LEDPIXEL">
-            <block type="math_number">
-              <field name="NUM">1</field>
-            </block>
-          </value>
-        </block>
-        <block type="neopixel_colourpick_dim_write">
-          <value name="LEDPIXEL">
-            <block type="math_number">
-              <field name="NUM">1</field>
-            </block>
-          </value>
-          <value name="BRIGHTNESS">
-            <block type="math_number">
-              <field name="NUM">100</field>
-            </block>
-          </value>
-        </block>
-        <block type="neopixel_write">
-          <value name="LEDPIXEL">
-            <block type="math_number">
-              <field name="NUM">1</field>
-            </block>
-          </value>
-          <value name="RED">
-            <block type="math_number">
-              <field name="NUM">255</field>
-            </block>
-          </value>
-          <value name="GREEN">
-            <block type="math_number">
-              <field name="NUM">0</field>
-            </block>
-          </value>
-          <value name="BLUE">
-            <block type="math_number">
-              <field name="NUM">0</field>
-            </block>
-          </value>
-        </block>
-      </category>
-    </category>
-    <category id="catLedUp" name="LedUpKidz">
-      <category id="catLedUpBlocks" name="LedUp Blokken">
-        <block type="ledupv3_hub">
-          <value name="LED-0">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED0</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-1">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED1</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-2">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED2</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-3">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED3</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-4">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED4</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-5">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED5</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LEDUP_BTN">
-            <block type="button_input_pullup_setup">
-              <field name="BUTTONNAME">Drukknop</field>
-            </block>
-          </value>
-        </block>
-        <block type="ledup_hub">
-          <value name="LED-0">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED0</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-1">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED1</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-2">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED2</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-3">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED3</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-4">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED4</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-          <value name="LED-5">
-            <block type="led_config_hub">
-              <field name="LEDNAME">LED5</field>
-              <field name="POLARITY">neg</field>  
-            </block>
-          </value>
-        </block>
-        <block type="arduino_functions"></block>
-        <block type="procedures_defnoreturn">
-          <field name="NAME">EffectAan</field>
-          <statement name="STACK">
-            <block type="led_digitalwrite_onoff">
-              <field name="LEDNAME">LED0</field>
-              <field name="STATE">on</field>
-            <next>
-            <block type="led_digitalwrite_onoff">
-              <field name="LEDNAME">LED1</field>
-              <field name="STATE">on</field>
-            <next>
-            <block type="led_digitalwrite_onoff">
-              <field name="LEDNAME">LED2</field>
-              <field name="STATE">on</field>
-            <next>
-            <block type="led_digitalwrite_onoff">
-              <field name="LEDNAME">LED3</field>
-              <field name="STATE">on</field>
-            <next>
-            <block type="led_digitalwrite_onoff">
-              <field name="LEDNAME">LED4</field>
-              <field name="STATE">on</field>
-            <next>
-            <block type="led_digitalwrite_onoff">
-              <field name="LEDNAME">LED5</field>
-              <field name="STATE">on</field>
-            </block>
-          </statement>
-        </block>
-        <block type="time_delay">
-          <value name="DELAY_TIME_MILI">
-            <block type="math_number">
-              <field name="NUM">1000</field>
-            </block>
-          </value>
-        </block>
-        <block type="time_delaymicros">
-          <value name="DELAY_TIME_MICRO">
-            <block type="math_number">
-              <field name="NUM">100</field>
-            </block>
-          </value>
-        </block>
-      </category>
-      <category id="catLedUpBlocks" name="LedUp Extra">
-        <block type="controls_repeat_ext">
-            <value name="TIMES">
-            <block type="math_number">
-              <field name="NUM">10</field>
-            </block>
-            </value>
-        </block>
-        <block type="controls_for">
-            <field name="VAR">lednummer</field>
-            <value name="FROM">
-            <block type="math_number">
-              <field name="NUM">0</field>
-            </block>
-            </value>
-            <value name="TO">
-            <block type="math_number">
-              <field name="NUM">5</field>
-            </block>
-            </value>
-            <value name="BY">
-            <block type="math_number">
-              <field name="NUM">1</field>
-            </block>
-            </value>
-        </block>
-        <block type="ledupkidz_led_onoff">
-          <value name="LEDUPKIDZ_LEDNUMBER">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="STATE">
-          <block type="logic_boolean">
-            <field name="BOOL">TRUE</field>
-          </block>
-          </value>
-        </block>
-      </category>
-    </category>
-    <category id="catAllBot" name="AllBot">
-      <category id="catAllBotBlocks" name="AllBot Blokken">
-        <block type="allbotservo_config_hub"></block>
-        <block type="allbot_walkforward">
-          <value name="STEPS">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">200</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_walkbackward">
-          <value name="STEPS">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">200</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_walkleft">
-          <value name="STEPS">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">200</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_walkright">
-          <value name="STEPS">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">200</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_lookleft">
-          <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">150</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_lookright">
-          <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">150</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_animate">
-          <statement name="SERVOMOVEMENTS">
-            <block type="servoallbot_animate">
-              <field name="SERVO_NAME">hipLeft</field>
-              <value name="SERVO_ANGLE">
-                <block type="math_number">
-                  <field name="NUM">45</field>
-                </block>
-              </value>
-            <next>
-              <block type="servoallbot_animate">
-                <field name="SERVO_NAME">hipRight</field>
-                <value name="SERVO_ANGLE">
-                  <block type="math_number">
-                    <field name="NUM">135</field>
-                  </block>
-                </value>
-              </block>
-            </next>
-          </statement>
-          <value name="SPEED">
-            <block type="math_number">
-              <field name="NUM">150</field>
-            </block>
-          </value>
-        </block>
-        <block type="servoallbot_animate">
-          <value name="SERVO_ANGLE">
-          <block type="math_number">
-            <field name="NUM">90</field>
-          </block>
-          </value>
-        </block>
-      </category>
-      <category id="catAllBotExtra" name="AllBot Extra">
-        <block type="allbot_scared">
-          <value name="SHAKES">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="BEEPS">
-          <block type="math_number">
-            <field name="NUM">3</field>
-          </block>
-          </value>
-        </block>
-        <block type="allbot_chirp">
-          <value name="BEEPS">
-          <block type="math_number">
-            <field name="NUM">5</field>
-          </block>
-          </value>
-          <value name="SPEED">
+        <value name="HIGH">
           <block type="math_number">
             <field name="NUM">100</field>
           </block>
-          </value>
-        </block>
-        <block type="allbot_remotecontrol"></block>
-        <block type="allbot_remotecontroldo"></block>
-        <block type="allbot_remotecontrol_times"></block>
-        <block type="allbot_remotecontrol_speed"></block>
-        <block type="servoallbot_write">
-          <value name="SERVO_ANGLE">
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+      <block type="base_map"></block>
+      <block type="array_create_with"></block>
+      <block type="array_create_with_length"></block>
+      <block type="array_getIndex">
+        <value name="AT">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="array_setIndex">
+        <value name="AT">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="array_getLength"></block>
+    </category>
+    <category id="catText" name="Tekst">
+      <block type="text"></block>
+      <block type="text_join"></block>
+      <block type="text_append">
+        <value name="TEXT">
+          <block type="text"></block>
+        </value>
+      </block>
+      <block type="text_length"></block>
+      <block type="text_isEmpty"></block>
+      <block type="ard_comment">
+        <value name="TEXT">
+          <block type="text"></block>
+        </value>
+      </block>
+      // <!--block type="text_trim"></block Need to update block -->
+      // <!--block type="text_print"></block Part of the serial comms -->
+    </category>
+    <category id="catVariables" name="Variabelen">
+      <block type="variables_get"></block>
+      <block type="variables_set"></block>
+      <block type="variables_set">
+        <value name="VALUE">
+          <block type="variables_set_type"></block>
+        </value>
+      </block>
+      <block type="variables_set_type"></block>
+    </category>
+    <category id="catTime" name="Tijd">
+      <block type="time_delay">
+        <value name="DELAY_TIME_MILI">
+          <block type="math_number">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+      </block>
+      <block type="time_delaymicros">
+        <value name="DELAY_TIME_MICRO">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="time_millis"></block>
+      <block type="time_micros"></block>
+      <block type="infinite_loop"></block>
+    </category>
+    <sep></sep>
+    <category id="catComponent" name="Componenten">
+      <block type="core_hub_component"></block>
+      <block type="led_config_hub"></block>
+      <block type="neopixel_config_hub">
+        <value name="NUMBER">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+      </block>
+      <block type="analogsensor_config_hub"></block>
+      <block type="digitalinput_config_hub"></block>
+      <block type="button_setup"></block>
+      <block type="button_input_pullup_setup"></block>
+      <block type="digitaloutput_config_hub"></block>
+      <block type="pwmoutput_config_hub"></block>
+      <block type="buzzer_config_hub"></block>
+      <block type="servo_config_hub"></block>
+      <block type="stepper_config_hub">
+        <value name="STEPPER_STEPS">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="STEPPER_SPEED">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category id="catTone" name="Licht&Geluid">
+      <block type="led_config_hub"></block>
+      <block type="neopixel_config_hub">
+        <value name="NUMBER">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+      </block>
+      <block type="buzzer_config_hub"></block>
+      <block type="led_digitalwrite_onoff"></block>
+      <block type="led_digitalwrite">
+        <value name="STATE">
+          <shadow type="io_highlow"></shadow>
+        </value>
+      </block>
+      <block type="neopixel_colourpick_write">
+        <value name="LEDPIXEL">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="neopixel_colourpick_dim_write">
+        <value name="LEDPIXEL">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="BRIGHTNESS">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="neopixel_write">
+        <value name="LEDPIXEL">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="RED">
+          <block type="math_number">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+        <value name="GREEN">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="BLUE">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="io_toneduration">
+        <value name="FREQUENCY">
+          <shadow type="math_number">
+            <field name="NUM">220</field>
+          </shadow>
+        </value>
+        <value name="DURATION">
+          <shadow type="math_number">
+            <field name="NUM">1000</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="io_pitch"></block>
+      <block type="io_tonepitch">
+        <value name="DURATION">
+          <shadow type="math_number">
+            <field name="NUM">1000</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="io_tone_buz">
+        <value name="FREQUENCY">
+          <shadow type="math_number">
+            <field name="NUM">220</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="io_notone_buz"></block>
+      <block type="io_tone">
+        <field name="TONEPIN">0</field>
+        <value name="FREQUENCY">
+          <shadow type="math_number">
+            <field name="NUM">220</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="io_notone"></block>
+    </category>
+    <category id="catMotors" name="Motoren">
+      <block type="servo_config_hub"></block>
+      <block type="stepper_config_hub">
+        <value name="STEPPER_STEPS">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="STEPPER_SPEED">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="servohub_write">
+        <value name="SERVO_ANGLE">
           <block type="math_number">
             <field name="NUM">90</field>
           </block>
+        </value>
+      </block>
+      <block type="servohub_write2">
+        <value name="SERVO_SPEED">
+          <block type="math_number">
+            <field name="NUM">50</field>
+          </block>
+        </value>
+      </block>
+      <block type="servohub_read"></block>
+      <block type="stepper_step">
+        <value name="STEPPER_STEPS">
+          <block type="math_number">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+      </block>
+      <block type="stepper_speed">
+        <value name="STEPPER_SPEED">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="stepper_rotate_number">
+        <value name="ANGLE">
+          <block type="math_number">
+            <field name="NUM">45</field>
+          </block>
+        </value>
+      </block>
+      <block type="stepper_rotate"></block>
+      <block type="stepper_restart"></block>
+      <block type="stepper_isrotating"></block>
+    </category>
+    <category id="catComms" name="Comms">
+      <block type="serial_setup">
+        <field name="SPEED">9600</field>
+      </block>
+      <block type="serial_print"></block>
+      <block type="text_prompt_ext">
+        <value name="TEXT">
+          <block type="text"></block>
+        </value>
+      </block>
+      <block type="spi_setup"></block>
+      <block type="spi_transfer"></block>
+      <block type="spi_transfer_return"></block>
+    </category>
+    <category id="catDisplays" name="Schermen">
+      <block type="tft_config"></block>
+      <block type="tft_text"></block>
+      <block type="tft_backgroundcolor"></block>
+      <block type="tft_sprite8x8"></block>
+      <block type="colour_picker"></block>
+      <block type="colour_random"></block>
+      <block type="colour_rgb255"></block>
+      <!--block type="colour_blend"></block-->
+      <block type="oled_config"></block>
+      <block type="oled_font"></block>
+      <block type="oled_print"></block>
+      <block type="oled_print_number"></block>
+      <block type="oled_show"></block>
+      <block type="oled_clear"></block>
+      <block type="segment_config"></block>
+      <block type="segment_write_number">
+        <value name="SEG_VAL">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="segment_write_singleseg"></block>
+      <block type="tft_sprite16x16"></block>
+      <block type="tft_line"></block>
+      <block type="tft_rect"></block>
+      <block type="tft_circ"></block>
+    </category>
+    <sep></sep>
+    <category id="catExp" name="Extra Sets">
+      <category id="catSensors" name="Sensors">
+        <block type="DHT_config_hub"></block>
+        <block type="DHT_readTemp"></block>
+        <block type="DHT_readRH"></block>
+        <block type="DHT_readHeatIndex"></block>
+      </category>
+      <category id="catDiorama" name="Diorama">
+        <block type="diorama_hub_component">
+          <field name="STEPPER_NAME">StepperDiorama</field>
+          <value name="STEPPER_STEPS">
+            <block type="math_number">
+              <field name="NUM">2050</field>
+            </block>
+          </value>
+          <value name="STEPPER_SPEED">
+            <block type="math_number">
+              <field name="NUM">5</field>
+            </block>
           </value>
         </block>
+        <block type="diorama_button_declaration"></block>
+        <block type="dio_playtrack">
+          <value name="TRACK">
+            <block type="math_number">
+              <field name="NUM">1</field>
+            </block>
+          </value>
+        </block>
+        <block type="dio_displaytext">
+          <value name="TEXT">
+            <block type="text">
+              <field name="TEXT">HELLO</field>
+            </block>
+          </value>
+        </block>
+        <block type="dio_louder"></block>
+        <block type="dio_quieter"></block>
+        <block type="dio_setvolume">
+          <value name="VOLUME">
+            <block type="math_number">
+              <field name="NUM">7</field>
+            </block>
+          </value>
+        </block>
+        <block type="dio_trackplaying"></block>
+        <block type="dio_resetbtnpress"></block>
+        <block type="dio_resetbtnnrpress"></block>
+        <block type="dio_stoptrack"></block>
+      </category>
+      <category id="catMD" name="Microduino">
+        <category id="catMDCore" name="Modules">
+          <block type="md_modules"></block>
+          <block type="mcookie_coreusb"></block>
+          <block type="mcookie_hub"></block>
+          <block type="mcookie_power"></block>
+          <block type="mcookie_audio_setup">
+            <value name="VOLUME">
+              <block type="math_number">
+                <field name="NUM">25</field>
+              </block>
+            </value>
+          </block>
+          <block type="mcookie_audio_amplifier"></block>
+        </category>
+        <category id="catMDAudio" name="Audio">
+          <block type="mcookie_audio_play">
+            <value name="AUDIONAME">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+          <block type="mcookie_audio_pause"></block>
+        </category>
+        <category id="catMDAct" name="Beweging">
+          <block type="mcookie_servo_setup">
+            <value name="SERVOTOPTYPE">
+              <shadow type="mcookie_servo_type"></shadow>
+            </value>
+            <value name="SERVOBOTTOMTYPE">
+              <shadow type="mcookie_servo_type"></shadow>
+            </value>
+          </block>
+          <block type="mcookie_servo_type">
+          </block>
+          <block type="servohub_write">
+            <value name="SERVO_ANGLE">
+              <block type="math_number">
+                <field name="NUM">90</field>
+              </block>
+            </value>
+          </block>
+          <block type="servohub_write2">
+            <value name="SERVO_SPEED">
+              <block type="math_number">
+                <field name="NUM">50</field>
+              </block>
+            </value>
+          </block>
+          <block type="servohub_read"></block>
+        </category>
+        <category id="catMDControl" name="Knoppen">
+          <block type="mcookie_crashbutton_setup"></block>
+          <block type="mcookie_button_digitalread"></block>
+          <block type="button_input"></block>
+        </category>
+        <category id="catMDLight" name="Licht">
+          <block type="mcookie_neopixel_setup">
+            <value name="NUMBER">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+          <block type="neopixel_colourpick_write">
+            <value name="LEDPIXEL">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+          <block type="neopixel_colourpick_dim_write">
+            <value name="LEDPIXEL">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="BRIGHTNESS">
+              <block type="math_number">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+          <block type="neopixel_write">
+            <value name="LEDPIXEL">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="RED">
+              <block type="math_number">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+            <value name="GREEN">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="BLUE">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </category>
+      </category>
+      <category id="catLedUp" name="LedUpKidz">
+        <category id="catLedUpBlocks" name="LedUp Blokken">
+          <block type="ledupv3_hub">
+            <value name="LED-0">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED0</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-1">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED1</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-2">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED2</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-3">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED3</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-4">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED4</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-5">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED5</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LEDUP_BTN">
+              <block type="button_input_pullup_setup">
+                <field name="BUTTONNAME">Drukknop</field>
+              </block>
+            </value>
+          </block>
+          <block type="ledup_hub">
+            <value name="LED-0">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED0</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-1">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED1</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-2">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED2</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-3">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED3</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-4">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED4</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+            <value name="LED-5">
+              <block type="led_config_hub">
+                <field name="LEDNAME">LED5</field>
+                <field name="POLARITY">neg</field>
+              </block>
+            </value>
+          </block>
+          <block type="arduino_functions"></block>
+          <block type="procedures_defnoreturn">
+            <field name="NAME">EffectAan</field>
+            <statement name="STACK">
+              <block type="led_digitalwrite_onoff">
+                <field name="LEDNAME">LED0</field>
+                <field name="STATE">on</field>
+                <next>
+                  <block type="led_digitalwrite_onoff">
+                    <field name="LEDNAME">LED1</field>
+                    <field name="STATE">on</field>
+                    <next>
+                      <block type="led_digitalwrite_onoff">
+                        <field name="LEDNAME">LED2</field>
+                        <field name="STATE">on</field>
+                        <next>
+                          <block type="led_digitalwrite_onoff">
+                            <field name="LEDNAME">LED3</field>
+                            <field name="STATE">on</field>
+                            <next>
+                              <block type="led_digitalwrite_onoff">
+                                <field name="LEDNAME">LED4</field>
+                                <field name="STATE">on</field>
+                                <next>
+                                  <block type="led_digitalwrite_onoff">
+                                    <field name="LEDNAME">LED5</field>
+                                    <field name="STATE">on</field>
+                                  </block>
+            </statement>
+          </block>
+          <block type="time_delay">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+          </block>
+          <block type="time_delaymicros">
+            <value name="DELAY_TIME_MICRO">
+              <block type="math_number">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </category>
+        <category id="catLedUpBlocks" name="LedUp Extra">
+          <block type="controls_repeat_ext">
+            <value name="TIMES">
+              <block type="math_number">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+          </block>
+          <block type="controls_for">
+            <field name="VAR">lednummer</field>
+            <value name="FROM">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="BY">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+          <block type="ledupkidz_led_onoff">
+            <value name="LEDUPKIDZ_LEDNUMBER">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="STATE">
+              <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </category>
+      </category>
+      <category id="catAllBot" name="AllBot">
+        <category id="catAllBotBlocks" name="AllBot Blokken">
+          <block type="allbotservo_config_hub"></block>
+          <block type="allbot_walkforward">
+            <value name="STEPS">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">200</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_walkbackward">
+            <value name="STEPS">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">200</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_walkleft">
+            <value name="STEPS">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">200</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_walkright">
+            <value name="STEPS">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">200</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_lookleft">
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">150</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_lookright">
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">150</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_animate">
+            <statement name="SERVOMOVEMENTS">
+              <block type="servoallbot_animate">
+                <field name="SERVO_NAME">hipLeft</field>
+                <value name="SERVO_ANGLE">
+                  <block type="math_number">
+                    <field name="NUM">45</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="servoallbot_animate">
+                    <field name="SERVO_NAME">hipRight</field>
+                    <value name="SERVO_ANGLE">
+                      <block type="math_number">
+                        <field name="NUM">135</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+            </statement>
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">150</field>
+              </block>
+            </value>
+          </block>
+          <block type="servoallbot_animate">
+            <value name="SERVO_ANGLE">
+              <block type="math_number">
+                <field name="NUM">90</field>
+              </block>
+            </value>
+          </block>
+        </category>
+        <category id="catAllBotExtra" name="AllBot Extra">
+          <block type="allbot_scared">
+            <value name="SHAKES">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="BEEPS">
+              <block type="math_number">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_chirp">
+            <value name="BEEPS">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+          <block type="allbot_remotecontrol"></block>
+          <block type="allbot_remotecontroldo"></block>
+          <block type="allbot_remotecontrol_times"></block>
+          <block type="allbot_remotecontrol_speed"></block>
+          <block type="servoallbot_write">
+            <value name="SERVO_ANGLE">
+              <block type="math_number">
+                <field name="NUM">90</field>
+              </block>
+            </value>
+          </block>
+        </category>
       </category>
     </category>
-  </category>
-</xml>;
+  </xml>;
 
   <!-- JS Diff -->
   <script src="blockly4Arduino/js_libs/diff.js"></script>
@@ -1232,6 +1307,7 @@
     });
   </script>
 </body>
+
 </html>
 
 <script type="text/javascript" src="blockly4Arduino/blockly_helper_after.js"></script>

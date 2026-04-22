@@ -1,47 +1,88 @@
-.blocklyTreeRoot{
-	min-width:120px;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Silkscreen:wght@400;700&display=swap');
+
+.blocklyTreeRoot {
+  min-width: 120px;
 }
+
 #tabRow>td {
-      border: 1px solid #ccc;
-	  font-family: sans-serif; 
-	  font-size:18px;
-	  border-bottom: none;
+  border: none;
+  font-family: sans-serif;
+  font-size: 18px;
+  border-bottom: none;
 }
+
 td.tabon {
-      border-bottom-color: #ddd !important;
-      background-color: #ddd;
-	  color: #000;
-      padding: 3px 19px 3px 19px;
-	  min-width:80px;
+  border-bottom-color: transparent !important;
+  background-color: #ddd;
+  color: #000;
+  padding: 3px 19px 3px 19px;
+  min-width: 80px;
 }
+
 td.taboff {
-      cursor: pointer;
-	  color: #000;
-      padding: 3px 19px 3px 19px;
-	  min-width:80px;
+  cursor: pointer;
+  color: #000;
+  padding: 3px 19px 3px 19px;
+  min-width: 80px;
 }
+
 td.taboff:hover {
-      background-color: #eee;
+  background-color: #eee;
 }
 
 .blocklyTreeIconOpen {
-    margin: 8px;
-}
-.blocklyTreeIconClosedLtr {
-    margin: 8px;
+  margin: 8px;
 }
 
-html, body {
+.blocklyTreeIconClosedLtr {
+  margin: 8px;
+}
+
+div>span.blocklyTreeIcon.blocklyTreeIconNone {
+  width: 24px;
+  height: 24px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0 8px 0 4px !important;
+  background: none !important;
+  font-family: 'Material Symbols Rounded';
+  font-size: 24px;
+  line-height: 1;
+  color: inherit;
+}
+
+div>span.blocklyTreeIcon.blocklyTreeIconNone::before {
+  content: 'help'; /* Default icon */
+}
+
+/* Interactive state color inheritance */
+/* Interactive state color inheritance - ensure white on selection */
+.blocklyTreeSelected span.blocklyTreeIconNone::before {
+  color: white !important;
+}
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover .blocklyTreeIconNone::before {
+  /* color: white !important; Optionally uncomment if hover should also turn icon white */
+}
+
+
+html,
+body {
   height: 100%;
 }
+
 body {
-  background-color: #fff;
-  font-family: sans-serif;
+  background-color: #f6f8ec;
+  font-family: 'IBM Plex Sans', sans-serif;
   margin: 0;
   overflow: hidden;
 }
+
 h1 {
   font-weight: normal;
+  font-family: 'Silkscreen', cursive;
   font-size: 140%;
   margin-left: 5px;
   margin-right: 5px;
@@ -49,25 +90,30 @@ h1 {
 
 /* Tabs */
 #tabRow>td {
-  border: 1px solid #ccc;
+  border: none;
 }
+
 td.tabon {
-  border-bottom-color: #ddd !important;
+  border-bottom-color: transparent !important;
   background-color: #ddd;
   padding: 5px 19px;
 }
+
 td.taboff {
   cursor: pointer;
   padding: 5px 19px;
 }
+
 td.taboff:hover {
   background-color: #eee;
 }
+
 td.tabmin {
   border-top-style: none !important;
   border-left-style: none !important;
   border-right-style: none !important;
 }
+
 td.tabmax {
   border-top-style: none !important;
   border-left-style: none !important;
@@ -82,6 +128,7 @@ table {
   padding: 0;
   border: none;
 }
+
 td {
   padding: 0;
   vertical-align: top;
@@ -90,21 +137,24 @@ td {
 button {
   padding: 1px 1em;
   font-size: 90%;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  border-radius: 0 !important;
+  border: none;
   background-color: #eee;
   color: black;
 }
+
 button.launch {
   border: 1px solid #d43;
   background-color: #d43;
   color: white;
 }
+
 button:active {
   border: 1px solid blue !important;
 }
+
 button:hover {
-  box-shadow: 2px 2px 5px #888;
+  /* box-shadow removed */
 }
 
 .content {
@@ -114,17 +164,17 @@ button:hover {
   position: absolute;
   direction: ltr;
 }
+
 /*
  * 
 pre.content {
-  border: 1px solid #ccc;
+  border: none;
   overflow: scroll;
 }
 #content_xml {
       resize: none;
       outline: none;
       border: none;
-          border: 1px solid #ccc;
       font-family: monospace;
       overflow: scroll;
     }
@@ -144,7 +194,7 @@ pre.content {
   font-family: monospace;
   overflow: scroll;
 }
-*/ 
+*/
 
 /* Ardublockly copies */
 /**
@@ -176,7 +226,7 @@ body {
 }
 
 body {
-  background-color: #eeeeee;
+  background-color: #f6f8ec;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -189,25 +239,30 @@ body {
 /*  Arduino Colours  */
 /*********************/
 .arduino_teal {
-  background-color: #00979C;
+  background-color: #cade80;
 }
+
 .arduino_teal_dark {
-  background-color: #006468;
+  background-color: #174d17;
   /* background-color: #00878F; from community logo */
 }
+
 .arduino_teal_light {
-  background-color: #62AEB2;
+  background-color: #2b4328;
 }
+
 .arduino_orange {
-  background-color: #E47128;
+  background-color: #fab415;
 }
+
 .arduino_yellow {
-  background-color: rgba(255, 204, 51, 1);
+  background-color: rgba(250, 180, 21, 1);
   /* background-color: #FFCC33; */
   /* background-color: #E5AD24; from community logo */
 }
+
 .arduino_brown {
-  background-color: #8C7965;
+  background-color: #221f1f;
 }
 
 
@@ -220,10 +275,12 @@ body {
   margin-bottom: 30px;
   z-index: 997 !important;
 }
+
 @media only screen and (min-width : 993px) {
   body {
     padding-top: 0px;
   }
+
   .nav-fixed {
     position: fixed;
     right: 0;
@@ -243,28 +300,29 @@ ul.side-nav li.logo {
   height: 145px;
   background-color: transparent;
 }
+
 ul.side-nav li.logo:hover {
   background-color: transparent;
 }
+
 ul.side-nav li.side-menu-end {
   background-color: #eeeeee;
   border-radius: 0px 0px 25px 0px;
   border-left: 4px solid #ffffff;
-  border-bottom: 4px solid #dddddd;
-  border-right: 4px solid #dddddd;
-  border-bottom: 4px solid #dddddd;
+  border: none;
   line-height: 25px;
 }
 
 /************************************/
 /*  Blocks, Arduino, and XML areas  */
 /************************************/
-.content .content_sidebar{
+.content .content_sidebar {
   margin: 0;
   padding: 0;
   width: 100%;
   background-color: #ffffff;
 }
+
 .height_transition {
   transition: height 0.2s ease-out;
   -ms-transition: height 0.2s ease-out;
@@ -277,26 +335,41 @@ ul.side-nav li.side-menu-end {
   position: relative !important;
   min-height: 480px;
 }
+
 .blocks_panel_large {
-  height: -moz-calc(100vh - 190px);     /* Firefox  */
-  height: -webkit-calc(100vh - 190px);  /* WebKit   */
-  height: -o-calc(100vh - 190px);       /* Opera    */
-  height: calc(100vh - 190px);          /* Standard */
+  height: -moz-calc(100vh - 190px);
+  /* Firefox  */
+  height: -webkit-calc(100vh - 190px);
+  /* WebKit   */
+  height: -o-calc(100vh - 190px);
+  /* Opera    */
+  height: calc(100vh - 190px);
+  /* Standard */
 }
+
 .blocks_panel_small {
-  height: -moz-calc(100vh - 350px);     /* Firefox  */
-  height: -webkit-calc(100vh - 350px);  /* WebKit   */
-  height: -o-calc(100vh - 350px);       /* Opera    */
-  height: calc(100vh - 350px);          /* Standard */
+  height: -moz-calc(100vh - 350px);
+  /* Firefox  */
+  height: -webkit-calc(100vh - 350px);
+  /* WebKit   */
+  height: -o-calc(100vh - 350px);
+  /* Opera    */
+  height: calc(100vh - 350px);
+  /* Standard */
 }
+
 #content_blocks {
   margin: 0;
   padding: 0;
   min-height: 480px;
-  height: -moz-calc(100vh - 190px);     /* Firefox  */
-  height: -webkit-calc(100vh - 190px);  /* WebKit   */
-  height: -o-calc(100vh - 190px);       /* Opera    */
-  height: calc(100vh - 190px);          /* Standard */
+  height: -moz-calc(100vh - 190px);
+  /* Firefox  */
+  height: -webkit-calc(100vh - 190px);
+  /* WebKit   */
+  height: -o-calc(100vh - 190px);
+  /* Opera    */
+  height: calc(100vh - 190px);
+  /* Standard */
 }
 
 #content_xml {
@@ -310,17 +383,27 @@ ul.side-nav li.side-menu-end {
   font-style: 0.2em !important;
   min-height: 384px;
 }
+
 .content_xml_large {
-  height: -moz-calc(100vh - 286px);     /* Firefox  */
-  height: -webkit-calc(100vh - 286px);  /* WebKit   */
-  height: -o-calc(100vh - 286px);       /* Opera    */
-  height: calc(100vh - 286px);          /* Standard */
+  height: -moz-calc(100vh - 286px);
+  /* Firefox  */
+  height: -webkit-calc(100vh - 286px);
+  /* WebKit   */
+  height: -o-calc(100vh - 286px);
+  /* Opera    */
+  height: calc(100vh - 286px);
+  /* Standard */
 }
+
 .content_xml_small {
-  height: -moz-calc(100vh - 446px);     /* Firefox  */
-  height: -webkit-calc(100vh - 446px);  /* WebKit   */
-  height: -o-calc(100vh - 446px);       /* Opera    */
-  height: calc(100vh - 446px);          /* Standard */
+  height: -moz-calc(100vh - 446px);
+  /* Firefox  */
+  height: -webkit-calc(100vh - 446px);
+  /* WebKit   */
+  height: -o-calc(100vh - 446px);
+  /* Opera    */
+  height: calc(100vh - 446px);
+  /* Standard */
 }
 
 /* The materialize framework changes height of the div to show or hide */
@@ -329,8 +412,12 @@ ul.side-nav li.side-menu-end {
   resize: none;
   outline: none;
   border: none;
-  padding: 0px 5px;
-  font-size: 0.9rem;
+  border-radius: 0 !important;
+  padding: 10px !important;
+  left: 0 !important;
+  /* Fix misalignment to the right */
+  font-size: 1.1rem;
+  /* Slightly bigger font for code */
   font-family: "Droid Sans Mono", monospace;
   overflow: auto;
   -moz-user-select: text;
@@ -339,18 +426,18 @@ ul.side-nav li.side-menu-end {
   -ms-user-select: text;
   user-select: text;
   min-height: 388px;
+  height: 100% !important;
+  /* Fill its parent */
+  top: 0 !important;
+  bottom: 0 !important;
 }
+
 .content_arduino_large {
-  height: -moz-calc(100vh - 180px);     /* Firefox  */
-  height: -webkit-calc(100vh - 180px);  /* WebKit   */
-  height: -o-calc(100vh - 180px);       /* Opera    */
-  height: calc(100vh - 180px);          /* Standard */
+  height: 100% !important;
 }
+
 .content_arduino_small {
-  height: -moz-calc(100vh - 440px);     /* Firefox  */
-  height: -webkit-calc(100vh - 440px);  /* WebKit   */
-  height: -o-calc(100vh - 440px);       /* Opera    */
-  height: calc(100vh - 440px);          /* Standard */
+  height: 100% !important;
 }
 
 /****************/
@@ -366,28 +453,36 @@ ul.side-nav li.side-menu-end {
 }
 
 .ide_output_collapsible {
-  box-shadow: 0 0px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-left: 0;
-  border-right: 0;
+  box-shadow: none;
 }
+
+border-left: 0;
+border-right: 0;
+}
+
 .ide_output_header_normal {
-  background-color: #006468;
+  background-color: #174d17;
   color: #ffffff;
-  -moz-transition: background-color 0.6s ease-in;;
+  -moz-transition: background-color 0.6s ease-in;
+  ;
   -o-transition: background-color 0.6s ease-in;
   -webkit-transition: background-color 0.6s ease-in;
 }
+
 .ide_output_header_highlight {
-  background-color: #62AEB2;
-  color: #ffffff;
-  -moz-transition: background-color 0.6s ease-in;;
+  background-color: #cade80;
+  color: #221f1f;
+  -moz-transition: background-color 0.6s ease-in;
+  ;
   -o-transition: background-color 0.6s ease-in;
   -webkit-transition: background-color 0.6s ease-in;
 }
+
 .ide_output_header_error {
-  background-color: #E47128;
-  color: #ffffff;
-  -moz-transition: background-color 0.6s ease-in;;
+  background-color: #fab415;
+  color: #221f1f;
+  -moz-transition: background-color 0.6s ease-in;
+  ;
   -o-transition: background-color 0.6s ease-in;
   -webkit-transition: background-color 0.6s ease-in;
 }
@@ -410,23 +505,30 @@ ul.side-nav li.side-menu-end {
   background-color: #303030;
   color: #ffffff;
 }
+
 /* IDE output content text formatting */
 #content_ide_output .arduino_dialog_success {
-  color: #00979C;   /* arduino light teal */
+  color: #00979C;
+  /* arduino light teal */
   font-size: 1.2rem;
   margin: 16px 0px 8px 0px;
 }
+
 #content_ide_output .arduino_dialog_failure {
-  color: #E47128;   /* arduino orange */
+  color: #E47128;
+  /* arduino orange */
   font-size: 1.2rem;
   margin: 16px 0px 8px 0px;
 }
+
 #content_ide_output .arduino_dialog_out {
   color: #ffffff;
   font-size: 0.9rem;
 }
+
 #content_ide_output .arduino_dialog_out_error {
-  color: #E47128;   /* arduino orange */
+  color: #E47128;
+  /* arduino orange */
   font-size: 0.9rem;
   padding-top: 8px;
   display: block;
@@ -436,16 +538,19 @@ ul.side-nav li.side-menu-end {
 #ide_output_spacer {
   height: 40px;
 }
+
 @media only screen and (min-width: 0) {
   #ide_output_spacer {
     height: 20px;
   }
 }
+
 @media only screen and (min-width: 601px) {
   #ide_output_spacer {
     height: 30px;
   }
 }
+
 @media only screen and (min-width: 993px) {
   #ide_output_spacer {
     height: 40px;
@@ -464,6 +569,7 @@ ul.side-nav li.side-menu-end {
   width: 160px;
   z-index: 12;
 }
+
 #button_ide_large {
   position: absolute;
   right: 0px;
@@ -471,10 +577,12 @@ ul.side-nav li.side-menu-end {
   width: 55px;
   height: 55px;
 }
+
 #button_ide_large i {
   font-size: 2.4rem !important;
   line-height: 55px;
 }
+
 #button_ide_middle {
   position: absolute;
   right: 72px;
@@ -486,6 +594,7 @@ ul.side-nav li.side-menu-end {
   -o-transition: visibility 0.3s linear, opacity 0.3s linear;
   transition: visibility 0.3s linear, opacity 0.3s linear;
 }
+
 #button_ide_left {
   position: absolute;
   right: 126px;
@@ -497,6 +606,7 @@ ul.side-nav li.side-menu-end {
   -o-transition: visibility 0.3s linear, opacity 0.3s linear;
   transition: visibility 0.3s linear, opacity 0.3s linear;
 }
+
 #button_ide_large:hover:before,
 #button_ide_middle:hover:before,
 #button_ide_left:hover:before {
@@ -507,7 +617,7 @@ ul.side-nav li.side-menu-end {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   transition: all .3s linear;
 }
 
@@ -517,6 +627,7 @@ ul.side-nav li.side-menu-end {
   bottom: 36px;
   display: none;
 }
+
 #button_load_xml .mdi-action-extension {
   font-size: 2.1rem !important;
 }
@@ -527,17 +638,14 @@ ul.side-nav li.side-menu-end {
 #button_ide_middle:hover,
 #button_ide_left:hover,
 #button_load_xml:hover {
-  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow removed */
 }
+
 #button_ide_large:active,
 #button_ide_middle:active,
 #button_ide_left:active,
 #button_load_xml:active {
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  /* box-shadow removed */
 }
 
 /* Toggle the toolbox on and off button */
@@ -552,18 +660,18 @@ ul.side-nav li.side-menu-end {
   z-index: 5;
   border-color: #e0e0e0 !important;
   border-width: 1px !important;
-  -webkit-border-radius: 4px 4px 4px 4px !important;
-  -moz-border-radius: 4px 4px 4px 4px !important;
-  border-radius: 4px 4px 4px 4px !important;
-  background: rgba(98, 174, 178, .2) !important;  /* Arduino Light Teal */
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
-  transition: background 0.3s linear, box-shadow 0.3s linear, border-width 0.3s linear;
-  -ms-transition: background 0.3s linear, box-shadow 0.3s linear, border-width 0.3s linear;
-  -moz-transition: background 0.3s linear, -moz-box-shadow 0.3s linear, border-width 0.3s linear;
-  -webkit-transition: background 0.3s linear, -webkit-box-shadow 0.3s linear, border-width 0.3s linear;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(202, 222, 128, .9) !important;
+  /* Light Kid Green */
+  /* box-shadow removed */
+  transition: background 0.3s linear, border-width 0.3s linear;
+  -ms-transition: background 0.3s linear, border-width 0.3s linear;
+  -moz-transition: background 0.3s linear, border-width 0.3s linear;
+  -webkit-transition: background 0.3s linear, border-width 0.3s linear;
 }
+
 .button_toggle_toolbox_off {
   position: absolute;
   margin: 0 !important;
@@ -584,44 +692,54 @@ ul.side-nav li.side-menu-end {
   right: 0px !important;
   top: 0px !important;
   width: 55px !important;
-  height: 55px !important; 
+  height: 55px !important;
   z-index: 5;
 }
+
 .spinner-orange {
   border-color: #E47128;
 }
+
 .active .spinner-layer.spinner-orange {
   /* durations: 4 * ARCTIME */
   -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, blue-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
   animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, blue-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
+
 .spinner-dark-teal {
   border-color: #00878F;
 }
+
 .active .spinner-layer.spinner-dark-teal {
   /* durations: 4 * ARCTIME */
   -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
   animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
+
 .spinner-yellow {
   border-color: rgba(255, 204, 51, 1);
 }
+
 .active .spinner-layer.spinner-yellow {
   /* durations: 4 * ARCTIME */
   -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, yellow-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
   animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, yellow-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
+
 .spinner-light-teal {
   border-color: #62AEB2;
 }
+
 .active .spinner-layer.spinner-light-teal {
   /* durations: 4 * ARCTIME */
   -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, green-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
   animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, green-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
+
 .spinner-purple {
   border-color: #8e24aa;
 }
+
 .active .spinner-layer.spinner-purple {
   /* durations: 4 * ARCTIME */
   -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
@@ -654,17 +772,24 @@ ul.side-nav li.side-menu-end {
 #arduino_dialog_body {
   padding-top: 25px;
 }
+
 .arduino_dialog_out {}
+
 .arduino_dialog_out_error {
-  color: #E47128;   /* arduino orange */
+  color: #E47128;
+  /* arduino orange */
   padding-top: 25px;
   display: block;
 }
+
 .arduino_dialog_success {
-  color: #00979C;   /* arduino light teal */
+  color: #00979C;
+  /* arduino light teal */
 }
+
 .arduino_dialog_failure {
-  color: #E47128;   /* arduino orange */
+  color: #E47128;
+  /* arduino orange */
 }
 
 /* Footer buttons padding */
@@ -677,21 +802,25 @@ ul.side-nav li.side-menu-end {
   height: auto !important;
   min-height: 200px;
 }
+
 .modal_small input {
   width: 100%;
 }
+
 @media only screen and (min-width: 0) {
   .modal_small {
     max-width: 75% !important;
     width: 75% !important;
   }
 }
+
 @media only screen and (min-width: 601px) {
   .modal_small {
     max-width: 55% !important;
     width: 55% !important;
   }
 }
+
 @media only screen and (min-width: 993px) {
   .modal_small {
     max-width: 35% !important;
@@ -707,12 +836,14 @@ ul.side-nav li.side-menu-end {
   display: inline-block;
   padding-left: 5px;
 }
+
 .sketch_name_icon {
   display: inline !important;
   font-size: 1.2rem !important;
   float: right;
   padding-top: 3px;
 }
+
 .sketch_name {
   width: auto !important;
   max-width: 400px;
@@ -720,26 +851,30 @@ ul.side-nav li.side-menu-end {
   height: 3rem !important;
   font-size: 1.5rem !important;
   border-bottom: 0px solid #EEE !important;
-  font-style: italic;
+  font-family: 'Silkscreen', cursive;
 }
+
 .sketch_name:focus {
-    border-bottom: 1px solid #EEE !important;
+  border-bottom: 1px solid #EEE !important;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 600px) {
   .sketch_name {
     max-width: 200px;
   }
+
   /* Remove the "Ardublockly title only leaving the sketch name */
   .app_title {
     display: none;
   }
 }
+
 @media only screen and (min-width : 600px) {
   .sketch_name {
     max-width: 275px;
   }
 }
+
 @media only screen and (min-width : 993px) {
   .sketch_name {
     max-width: 350px;
@@ -752,20 +887,19 @@ ul.side-nav li.side-menu-end {
 /************/
 /* Edit logo for code and xml collapsibles*/
 .collapsible_logo {
-  width: 3rem;
   font-size: 1.6rem;
-  line-height: 3rem;
   font-weight: bold;
-  display: block;
-  float: left;
-  text-align: center;
-  margin-right: 1rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
 }
 
 /* Colours for the new and deleted code highlighting */
 .code_highlight_new {
-  background-color: rgba(255, 204, 51, 0.5); /* Arduino yellow 50% */
+  background-color: rgba(255, 204, 51, 0.5);
+  /* Arduino yellow 50% */
 }
+
 .code_highlight_deleted {
   background-color: #FDBEBE;
 }
@@ -775,10 +909,13 @@ ul.side-nav li.side-menu-end {
 /*  Overwriting Blockly CSS  */
 /*****************************/
 /* Blockly text for the following components:  */
-.blocklyTreeLabel,           /* Toolbox        */
-.blocklyText,                /* Block          */
-.goog-menuitem-content {     /* Drop down menu */
-  font-family: "Roboto", sans-serif!important;
+.blocklyTreeLabel,
+/* Toolbox        */
+.blocklyText,
+/* Block          */
+.goog-menuitem-content {
+  /* Drop down menu */
+  font-family: "IBM Plex Sans", sans-serif !important;
 }
 
 /* Entire Blockly area, Toolbox dranw on top */
@@ -788,67 +925,112 @@ ul.side-nav li.side-menu-end {
 
 /* Toolbox */
 .blocklyToolboxDiv {
-  border-color: #e0e0e0 !important;
-  border-width: 0px 1px 0px 0px !important;
-  -webkit-border-radius: 0px 4px 4px 0px !important;
-  -moz-border-radius: 4px 4px 0px 0px !important;
-  border-radius: 0px 4px 4px 0px !important;
+  border-color: #174d17 !important;
+  border-width: 0px 2px 0px 0px !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
   border: none !important;
   margin: 0px !important;
   padding: 0px 0px 0px 0px !important;
-  background: rgba(98, 174, 178, .2) !important;  /* Arduino Light Teal */
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background: #f6f8ec !important;
+  /* Changed from Light Green to Off-white for better icon contrast */
+  /* box-shadow removed everywhere */
   overflow: hidden !important;
 }
+
 .blocklyTreeRoot {
   background: none !important;
   border: none !important;
   /*margin: 36px 0px 0px 0px !important;*/
   margin: 0px 0px 0px 0px !important;
   padding: 0px 1px !important;
-  height: -moz-calc(100% - 37px);     /* Firefox  */
-  height: -webkit-calc(100% - 37px);  /* WebKit   */
-  height: -o-calc(100% - 37px);       /* Opera    */
-  height: calc(100% - 37px);          /* Standard */
+  height: -moz-calc(100% - 37px);
+  /* Firefox  */
+  height: -webkit-calc(100% - 37px);
+  /* WebKit   */
+  height: -o-calc(100% - 37px);
+  /* Opera    */
+  height: calc(100% - 37px);
+  /* Standard */
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .blocklyTreeRow {
   background: none !important;
   border: none !important;
-  margin: 0px 0px !important;
+  margin: 3px 0 !important;
+  /* Slight vertical separation between notched categories */
   padding: 7px 16px 7px 0px !important;
   box-sizing: content-box !important;
+  position: relative;
+  z-index: 1;
 }
+
+.blocklyTreeRow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: -1;
+  /*  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);*/
+}
+
 .blocklyTreeSelected {
-  background-color: #E47128 !important;  /* arduino orange */
+  background-color: transparent !important;
+  color: #ffffff !important;
 }
+
+.blocklyTreeSelected::before {
+  background: #174d17 !important;
+}
+
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
-  background-color: rgba(255, 204, 51, 1) !important;  /* arduino yellow */
+  background-color: transparent !important;
+  color: #174d17 !important;
 }
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover::before {
+  background: rgba(23, 77, 23, 0.1) !important;
+}
+
 .blocklyTreeLabel {
+  color: inherit !important;
 }
-.blocklyTreeSeparator{
+
+.blocklyTreeSelected .blocklyTreeLabel {
+  color: #ffffff !important;
+}
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover .blocklyTreeLabel {
+  color: #174d17 !important;
+}
+
+.blocklyTreeSeparator {
   padding: 0px !important;
   margin: 0px !important;
 }
 
 /* Toolbox second column with blocks*/
 .blocklyFlyoutBackground {
-  fill: #DEEEEF !important;
-  fill-opacity: 0.7 !important;
-  -webkit-border-radius: 0px 4px 4px 0px !important;
-  -moz-border-radius: 0px 4px 4px 0px !important;
-  border-radius: 0px 4px 4px 0px !important;
+  fill: #f6f8ec !important;
+  /* Kid layout background */
+  fill-opacity: 0.9 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 /* Blockly scrollbars */
 .blocklyScrollbarKnob {
-  fill: #00878F !important;
+  fill: #174d17 !important;
   fill-opacity: 0.7 !important;
 }
+
 .blocklyScrollbarBackground {
   stroke-width: 0px !important;
   fill: none !important;
@@ -870,16 +1052,19 @@ ul.side-nav li.side-menu-end {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
 @media only screen and (min-width : 601px) {
   .container {
     width: 95%;
   }
 }
+
 @media only screen and (min-width : 993px) {
   .container {
     width: 100%;
   }
 }
+
 @media only screen and (min-width : 1380px) {
   .container {
     width: 90%;
@@ -891,16 +1076,19 @@ ul.side-nav li.side-menu-end {
   body {
     padding-top: 0px;
   }
+
   /* Expand to all visible horizontal space */
   .container {
     width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
   }
+
   nav {
     margin: 0 !important;
     padding: 0px 12px !important;
   }
+
   /* remove space between cards and navigation bar */
   .col {
     margin-top: -8px;
@@ -912,32 +1100,39 @@ ul.side-nav {
   padding: 0px !important;
   line-height: 64px !important;
 }
+
 ul.side-nav i {
   font-size: 1.8rem !important;
 }
+
 ul.side-nav .collapsible {
   margin: 0 !important;
 }
+
 /* Set the background effect in the side menu */
 ul.side-nav {
   background-color: transparent;
   box-shadow: none !important;
 }
+
 ul.side-nav li {
   background-color: #eeeeee;
 }
+
 ul.side-nav li {
   background-color: #eeeeee;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-right: 2px solid #dddddd;
+  border-right: none;
   border-left: 2px solid #ffffff;
 }
+
 ul.side-nav li ul li ul {
   cursor: pointer;
   border: none !important;
 }
+
 ul.side-nav li ul li ul li {
   border: none !important;
 }
@@ -965,10 +1160,44 @@ ul.side-nav li ul li ul li {
   border-width: 4px !important;
 }
 
-/* Materialize messes with these, so reset them here */
+.collapsible {
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  /* Fill parent column */
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.collapsible li {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.collapsible-body {
+  background-color: #f6f8ec !important;
+  border: none !important;
+  border-radius: 0 !important;
+  /* Sharp corners */
+  padding: 0 !important;
+  /* Remove internal padding that causes code misalignment */
+  position: relative !important;
+  /* Fix absolute child disappearance */
+  flex-grow: 1 !important;
+  /* Stretch to fill remaining space in the li */
+  height: 100% !important;
+}
+
+/* Materialize messed with headers */
 .blocklyHtmlInput {
   border: none !important;
-  border-radius: 4px !important;
+  border-radius: 0 !important;
   font-family: sans-serif !important;
   height: 100% !important;
   margin: 0 !important;
@@ -979,18 +1208,18 @@ ul.side-nav li ul li ul li {
 }
 
 input.buttonlink {
-     background:none!important;
-     color:inherit;
-     border:none; 
-     padding:0!important;
-     margin-left: 20px;
-     font: inherit;
-     /*border is optional*/
-     /*border-bottom:1px solid #444; */
-     cursor: pointer;
+  background: none !important;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  margin-left: 20px;
+  font: inherit;
+  /*border is optional*/
+  /*border-bottom:1px solid #444; */
+  cursor: pointer;
 }
 
- /* Style the button that is used to open and close the collapsible content */
+/* Style the button that is used to open and close the collapsible content */
 .infocollapsible {
   background-color: #eee;
   color: #444;
@@ -1006,7 +1235,8 @@ input.buttonlink {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .infocollapsible:hover {
+.active,
+.infocollapsible:hover {
   background-color: #ccc;
 }
 
@@ -1018,5 +1248,306 @@ input.buttonlink {
   background-color: #f1f1f1;
   position: absolute;
   bottom: 60px;
-} 
+}
 
+/*********************************/
+/* Kid-Friendly Override Styles  */
+/*********************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.header,
+.sketch_name,
+.collapsible-header,
+.dropdown-toggle,
+.infocollapsible {
+  font-family: 'Silkscreen', cursive !important;
+}
+
+.header {
+  background-color: #cade80 !important;
+  border-bottom: 4px solid #174d17 !important;
+}
+
+#tabRow {
+  height: auto !important;
+}
+
+#tabRow>td {
+  border: none !important;
+  font-family: 'Silkscreen', cursive !important;
+  font-size: 1.7rem !important;
+}
+
+#tabRow>td.tabmax {
+  vertical-align: middle;
+  text-align: right;
+  padding-right: 15px !important;
+}
+
+#tabRow>td#tab_blocks {
+  padding-left: 35px !important;
+  /* 20px native left padding + 15px outer margin shift */
+}
+
+#tabRow>td#tab_blocks::before {
+  left: 15px;
+  /* Shift the start of the drawn shape inherently inward */
+}
+
+td.tabon {
+  color: #ffffff !important;
+  padding: 18px 20px !important;
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+  /* Move background to ::before */
+}
+
+td.tabon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 45px;
+  transform: translateY(-50%);
+  background: #174d17;
+  z-index: -1;
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+
+td.taboff {
+  color: #174d17 !important;
+  padding: 18px 20px !important;
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+}
+
+td.taboff::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 45px;
+  transform: translateY(-50%);
+  background: transparent;
+  z-index: -1;
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+
+td.taboff:hover::before {
+  background: rgba(23, 77, 23, 0.1);
+}
+
+td.tabmin {
+  width: 15px;
+  background-color: transparent !important;
+}
+
+/* Base transparent areas coherence */
+ul.side-nav {
+  background-color: #f6f8ec !important;
+}
+
+ul.side-nav li {
+  background-color: #cade80 !important;
+  border-color: #174d17 !important;
+  color: #221f1f !important;
+}
+
+ul.side-nav li:not(.side-menu-end):hover {
+  background-color: #fab415 !important;
+  color: #221f1f !important;
+}
+
+ul.side-nav li.side-menu-end {
+  background-color: #174d17 !important;
+  color: #ffffff !important;
+}
+
+.content {
+  background-color: #f6f8ec !important;
+}
+
+#blocks_panel,
+#content_area,
+#content_blocks {
+  background-color: #f6f8ec !important;
+}
+
+/* Materialize Collapsible Panel Headers */
+.collapsible-header {
+  background-color: #cade80 !important;
+  color: #174d17 !important;
+  border-bottom: none !important;
+  border-top: 2px solid #174d17 !important;
+  border-radius: 0 !important;
+  /* Sharp corners */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Removal of redundant collapsible body definition to prevent conflicts */
+
+/* All Bootstrap Buttons */
+.btn,
+.btn-large,
+.btn-floating,
+button.launch,
+.infocollapsible {
+  background-color: #fab415 !important;
+  color: #221f1f !important;
+  font-family: 'Silkscreen', cursive !important;
+  border: 2px solid #174d17 !important;
+  border-radius: 0 !important;
+  text-transform: none !important;
+  box-shadow: 2px 2px 0px #174d17 !important;
+}
+
+.btn:hover,
+.btn-large:hover,
+.btn-floating:hover,
+button.launch:hover,
+.infocollapsible:hover {
+  background-color: #cade80 !important;
+  color: #174d17 !important;
+  box-shadow: 1px 1px 0px #174d17 !important;
+  transform: translate(1px, 1px);
+}
+
+.dropdown-menu {
+  background-color: #f6f8ec !important;
+  border: 2px solid #174d17 !important;
+}
+
+.dropdown-menu>li>input.buttonlink {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+  color: #221f1f !important;
+  padding: 5px !important;
+}
+
+.dropdown-menu>li>input.buttonlink:hover {
+  color: #174d17 !important;
+  font-weight: bold;
+  background-color: #cade80 !important;
+}
+
+/* Mirror tab styling for header buttons */
+.tabmax .btn,
+.tabmax .btn-large,
+.tabmax .btn-floating,
+.tabmax button.launch,
+.tabmax .dropdown-toggle {
+  color: #174d17 !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 20px !important;
+  border-radius: 0 !important;
+  height: 45px !important;
+  line-height: 45px !important;
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+  font-size: 1em;
+  /* Move background to ::before */
+}
+
+/* Expand tooltip hover boundaries by negating physical padding */
+.tabmax .btn a.b4ard_tt {
+  display: inline-block;
+  height: 100%;
+  padding: 0 20px;
+  margin: 0 -20px;
+  color: inherit !important;
+}
+
+.tabmax .btn::before,
+.tabmax .btn-large::before,
+.tabmax .btn-floating::before,
+.tabmax button.launch::before,
+.tabmax .dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Fills the exact 45px boundaries */
+  background: transparent;
+  z-index: -1;
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+
+.tabmax .btn:hover::before,
+.tabmax .btn-large:hover::before,
+.tabmax .btn-floating:hover::before,
+.tabmax button.launch:hover::before,
+.tabmax .dropdown-toggle:hover::before {
+  background: rgba(23, 77, 23, 0.1) !important;
+}
+
+.tabmax .btn:hover,
+.tabmax .btn-large:hover,
+.tabmax .btn-floating:hover,
+.tabmax button.launch:hover,
+.tabmax .dropdown-toggle:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Sidebar Icons Styling to match layout */
+ul.side-nav i {
+  color: #174d17 !important;
+}
+
+ul.side-nav li:hover i,
+ul.side-nav li:not(.side-menu-end):hover i {
+  color: #221f1f !important;
+}
+
+ul.side-nav li.active i,
+ul.side-nav li.side-menu-end i {
+  color: #ffffff !important;
+}
+
+
+#content_blocks .blocklyTreeSelected .blocklyTreeIcon {
+  /* When selected (dark green background), turn icons white! */
+  filter: brightness(0) saturate(100%) invert(100%) !important;
+}
+
+/* Footer Links positioned under Blockly categories */
+/* Ensure the Materialize sidebar column itself stretches to the bottom */
+.col.s12.m12.l4 {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#bottom_link {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  text-align: center;
+  z-index: 100;
+  color: #174d17;
+  font-family: 'Silkscreen', cursive;
+  font-size: 1.1rem;
+}
+
+#bottom_link a {
+  text-decoration: none !important;
+  color: #174d17 !important;
+}
+
+#bottom_link a:hover {
+  text-decoration: underline !important;
+  color: #174d17 !important;
+}
