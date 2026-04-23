@@ -679,13 +679,13 @@ Blockly.Flyout.prototype.addBlockListeners_ = function(root, block, rect) {
     this.listeners_.push(Blockly.bindEvent_(rect, 'pointerdown', null,
         this.blockMouseDown_(block)));
   }
-  this.listeners_.push(Blockly.bindEvent_(root, 'mouseover', block,
+  this.listeners_.push(Blockly.bindEvent_(root, 'pointerover', block,
       block.addSelect));
-  this.listeners_.push(Blockly.bindEvent_(root, 'mouseout', block,
+  this.listeners_.push(Blockly.bindEvent_(root, 'pointerout', block,
       block.removeSelect));
-  this.listeners_.push(Blockly.bindEvent_(rect, 'mouseover', block,
+  this.listeners_.push(Blockly.bindEvent_(rect, 'pointerover', block,
       block.addSelect));
-  this.listeners_.push(Blockly.bindEvent_(rect, 'mouseout', block,
+  this.listeners_.push(Blockly.bindEvent_(rect, 'pointerout', block,
       block.removeSelect));
 };
 
@@ -713,7 +713,7 @@ Blockly.Flyout.prototype.blockMouseDown_ = function(block) {
       Blockly.Flyout.onMouseUpWrapper_ = Blockly.bindEvent_(document,
           'pointerup', this, flyout.onMouseUp_);
       Blockly.Flyout.onMouseMoveBlockWrapper_ = Blockly.bindEvent_(document,
-          'mousemove', this, flyout.onMouseMoveBlock_);
+          'pointermove', this, flyout.onMouseMoveBlock_);
     }
     // This event has been handled.  No need to bubble up to the document.
     e.stopPropagation();
@@ -733,9 +733,9 @@ Blockly.Flyout.prototype.onMouseDown_ = function(e) {
   Blockly.Flyout.terminateDrag_();
   this.startDragMouseY_ = e.clientY;
   this.startDragMouseX_ = e.clientX;
-  Blockly.Flyout.onMouseMoveWrapper_ = Blockly.bindEvent_(document, 'mousemove',
+  Blockly.Flyout.onMouseMoveWrapper_ = Blockly.bindEvent_(document, 'pointermove',
       this, this.onMouseMove_);
-  Blockly.Flyout.onMouseUpWrapper_ = Blockly.bindEvent_(document, 'mouseup',
+  Blockly.Flyout.onMouseUpWrapper_ = Blockly.bindEvent_(document, 'pointerup',
       this, Blockly.Flyout.terminateDrag_);
   // This event has been handled.  No need to bubble up to the document.
   e.preventDefault();
@@ -795,7 +795,7 @@ Blockly.Flyout.prototype.onMouseMove_ = function(e) {
  * @private
  */
 Blockly.Flyout.prototype.onMouseMoveBlock_ = function(e) {
-  if (e.type == 'mousemove' && e.clientX <= 1 && e.clientY == 0 &&
+  if (e.type == 'poinermove' && e.clientX <= 1 && e.clientY == 0 &&
       e.button == 0) {
     /* HACK:
      Safari Mobile 6.0 and Chrome for Android 18.0 fire rogue mousemove events

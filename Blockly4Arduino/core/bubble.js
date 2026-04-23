@@ -275,9 +275,9 @@ Blockly.Bubble.prototype.bubbleMouseDown_ = function(e) {
       this.relativeTop_));
 
   Blockly.Bubble.onMouseUpWrapper_ = Blockly.bindEvent_(document,
-      'mouseup', this, Blockly.Bubble.unbindDragEvents_);
+      'pointerup', this, Blockly.Bubble.unbindDragEvents_);
   Blockly.Bubble.onMouseMoveWrapper_ = Blockly.bindEvent_(document,
-      'mousemove', this, this.bubbleMouseMove_);
+      'pointermove', this, this.bubbleMouseMove_);
   Blockly.hideChaff();
   // This event has been handled.  No need to bubble up to the document.
   e.stopPropagation();
@@ -317,9 +317,9 @@ Blockly.Bubble.prototype.resizeMouseDown_ = function(e) {
       this.workspace_.RTL ? -this.width_ : this.width_, this.height_));
 
   Blockly.Bubble.onMouseUpWrapper_ = Blockly.bindEvent_(document,
-      'mouseup', this, Blockly.Bubble.unbindDragEvents_);
+      'pointerup', this, Blockly.Bubble.unbindDragEvents_);
   Blockly.Bubble.onMouseMoveWrapper_ = Blockly.bindEvent_(document,
-      'mousemove', this, this.resizeMouseMove_);
+      'pointermove', this, this.resizeMouseMove_);
   Blockly.hideChaff();
   // This event has been handled.  No need to bubble up to the document.
   e.stopPropagation();

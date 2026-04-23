@@ -359,7 +359,7 @@ Blockly.inject.loadSounds_ = function(pathToMedia, workspace) {
   };
   // Android ignores any sound not loaded as a result of a user action.
   soundBinds.push(
-      Blockly.bindEvent_(document, 'mousemove', null, unbindSounds));
+      Blockly.bindEvent_(document, 'pointermove', null, unbindSounds));
   soundBinds.push(
       Blockly.bindEvent_(document, 'touchstart', null, unbindSounds));
 };

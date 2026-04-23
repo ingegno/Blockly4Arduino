@@ -469,9 +469,9 @@ Blockly.Scrollbar.prototype.onMouseDownKnob_ = function(e) {
   // Record the current mouse position.
   this.startDragMouse = this.horizontal_ ? e.clientX : e.clientY;
   Blockly.Scrollbar.onMouseUpWrapper_ = Blockly.bindEvent_(document,
-      'mouseup', this, this.onMouseUpKnob_);
+      'pointerup', this, this.onMouseUpKnob_);
   Blockly.Scrollbar.onMouseMoveWrapper_ = Blockly.bindEvent_(document,
-      'mousemove', this, this.onMouseMoveKnob_);
+      'pointermove', this, this.onMouseMoveKnob_);
   e.stopPropagation();
   e.preventDefault();
 };

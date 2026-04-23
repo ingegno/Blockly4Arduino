@@ -141,7 +141,10 @@ if (goog.events.BrowserFeature.TOUCH_ENABLED) {
   Blockly.bindEvent_.TOUCH_MAP = {
     'mousedown': ['touchstart'],
     'mousemove': ['touchmove'],
-    'mouseup': ['touchend', 'touchcancel']
+    'mouseup': ['touchend', 'touchcancel'],
+    'pointerdown': ['touchstart'],
+    'pointermove': ['touchmove'],
+    'pointerup': ['touchend', 'touchcancel']
   };
 }
 
