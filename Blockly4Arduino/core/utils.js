@@ -139,9 +139,6 @@ Blockly.bindEvent_ = function(node, name, thisObject, func) {
 Blockly.bindEvent_.TOUCH_MAP = {};
 if (goog.events.BrowserFeature.TOUCH_ENABLED) {
   Blockly.bindEvent_.TOUCH_MAP = {
-    'mousedown': ['touchstart'],
-    'mousemove': ['touchmove'],
-    'mouseup': ['touchend', 'touchcancel'],
     'pointerdown': ['touchstart'],
     'pointermove': ['touchmove'],
     'pointerup': ['touchend', 'touchcancel']

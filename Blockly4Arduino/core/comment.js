@@ -112,7 +112,7 @@ Blockly.Comment.prototype.createEditor_ = function() {
   body.appendChild(textarea);
   this.textarea_ = textarea;
   this.foreignObject_.appendChild(body);
-  Blockly.bindEvent_(textarea, 'mouseup', this, this.textareaFocus_);
+  Blockly.bindEvent_(textarea, 'pointerup', this, this.textareaFocus_);
   // Don't zoom with mousewheel.
   Blockly.bindEvent_(textarea, 'wheel', this, function(e) {
     e.stopPropagation();

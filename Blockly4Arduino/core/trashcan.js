@@ -195,7 +195,7 @@ Blockly.Trashcan.prototype.createDom = function() {
   this.svgLid_.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href',
       this.workspace_.options.pathToMedia + Blockly.SPRITE.url);
 
-  Blockly.bindEvent_(this.svgGroup_, 'mouseup', this, this.click);
+  Blockly.bindEvent_(this.svgGroup_, 'pointerup', this, this.click);
   this.animateLid_();
   return this.svgGroup_;
 };

@@ -151,7 +151,7 @@ Blockly.Toolbox.prototype.init = function() {
   document.body.appendChild(this.HtmlDiv);
 
   // Clicking on toolbox closes popups.
-  Blockly.bindEvent_(this.HtmlDiv, 'mousedown', this,
+  Blockly.bindEvent_(this.HtmlDiv, 'pointerdown', this,
       function(e) {
         if (Blockly.isRightButton(e) || e.target == this.HtmlDiv) {
           // Close flyout.

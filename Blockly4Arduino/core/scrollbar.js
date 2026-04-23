@@ -208,9 +208,9 @@ Blockly.Scrollbar = function(workspace, horizontal, opt_pair) {
   }
   var scrollbar = this;
   this.onMouseDownBarWrapper_ = Blockly.bindEvent_(this.svgBackground_,
-      'mousedown', scrollbar, scrollbar.onMouseDownBar_);
+      'pointerdown', scrollbar, scrollbar.onMouseDownBar_);
   this.onMouseDownKnobWrapper_ = Blockly.bindEvent_(this.svgKnob_,
-      'mousedown', scrollbar, scrollbar.onMouseDownKnob_);
+      'pointerdown', scrollbar, scrollbar.onMouseDownKnob_);
 };
 
 /**
