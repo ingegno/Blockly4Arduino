@@ -473,18 +473,18 @@ border-right: 0;
   background-color: #cade80;
   color: #221f1f;
   -moz-transition: background-color 0.6s ease-in;
-  ;
   -o-transition: background-color 0.6s ease-in;
   -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
 }
 
 .ide_output_header_error {
   background-color: #fab415;
   color: #221f1f;
   -moz-transition: background-color 0.6s ease-in;
-  ;
   -o-transition: background-color 0.6s ease-in;
   -webkit-transition: background-color 0.6s ease-in;
+  transition: background-color 0.6s ease-in;
 }
 
 #content_ide_output {
@@ -1455,6 +1455,7 @@ button.launch:hover,
   position: relative;
   z-index: 1;
   background-color: transparent !important;
+  background: transparent !important; /* Ensure no background on the button itself */
   font-size: 1em;
   /* Move background to ::before */
 }
@@ -1500,6 +1501,38 @@ button.launch:hover,
 .tabmax .dropdown-toggle:hover {
   transform: none !important;
   box-shadow: none !important;
+}
+
+/* Active dropdown tab state */
+.tabmax .open > .dropdown-toggle {
+  color: white !important;
+}
+.tabmax .open > .dropdown-toggle::before {
+  background: #174d17 !important;
+}
+
+.tabmax .btn-copy {
+  color: white !important;
+}
+
+.tabmax .btn-copy::before {
+  background: #fab415 !important;
+}
+
+.tabmax .btn-copy:hover::before {
+  background: #e6a312 !important;
+}
+
+.tabmax .btn-discard {
+  color: white !important;
+}
+
+.tabmax .btn-discard::before {
+  background: #d43 !important;
+}
+
+.tabmax .btn-discard:hover::before {
+  background: #b32b22 !important;
 }
 
 /* Sidebar Icons Styling to match layout */
