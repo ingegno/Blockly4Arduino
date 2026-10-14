@@ -146,7 +146,7 @@
             <td class="tabmin">&nbsp;</td>
             <!--td id="tab_arduino" class="taboff" onclick="Blockly4Arduino.tabClick('arduino')">Arduino</td>
             <td class="tabmin">&nbsp;</td-->
-            <td id="tab_codebender" class="taboff" onclick="Blockly4Arduino.tabClick('codebender')">Upload</td>
+            <td id="tab_codebender" class="taboff" onclick="Blockly4Arduino.tabClick('codebender')">Instructies</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff" onclick="Blockly4Arduino.tabClick('xml')">XML</td>
             <td class="tabmax">
@@ -169,17 +169,13 @@
                     <li><input id="ex_LUK04" type="button" class="buttonlink" value="04: Meerdere effecten" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_04_combineren.xml');" /></li>
                     <li><input id="ex_LUK05" type="button" class="buttonlink" value="05: Extra: Loops" onclick="Blockly4Arduino.loadServerXmlFile(Blockly4Arduino.EXAMPLE_HTTPURL + 'LedUpKidz_05_loops.xml');" /></li>
                   </ul>
-                <button type="button" class="btn btn-default btn-md" onclick="uploadClick()">
-                  <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Opladen">
-                    <span class="glyphicon glyphicon-play-circle"></span>
-                  </a>
-                </button>
-                <button type="button" class="btn btn-success btn-md" onclick="copyCode()">
+
+                <button type="button" class="btn btn-md btn-copy" onclick="copyCode()">
                     <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Code Kopiëren">
                     <span class="glyphicon glyphicon glyphicon-copy"></span>
                   </a>
                 </button>
-                <button type="button" class="btn btn-warning btn-md" onclick="discard()">
+                <button type="button" class="btn btn-md btn-discard" onclick="discard()">
                    <a class="b4ard_tt" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Herbeginnen">
                      <span class="glyphicon glyphicon-trash"></span>
                     </a>
